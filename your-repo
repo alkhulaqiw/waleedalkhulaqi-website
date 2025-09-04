@@ -1,0 +1,15 @@
+your-repo/
+├── _config.yml
+├── _layouts/
+│   └── default.html
+├── _includes/
+│   ├── head.html
+│   ├── header.html
+│   ├── footer.html
+│   └── dark-mode-toggle.html
+├── about.md
+├── index.html
+├── assets/
+│   └── css/
+│       └── style.css
+└── CNAME
