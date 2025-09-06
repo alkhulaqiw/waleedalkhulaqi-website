@@ -1,108 +1,321 @@
+/body>
+</html>
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="كيف تربح من الإنترنت بدون رأس مال؟ تجربتي الحقيقية مع وليد الخلاقي." />
-  <title>كيف تربح من الإنترنت بدون رأس مال؟ – وليد الخلاقي</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>وليد الخلاقي - مشاركة المقالات</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .article-card {
+            transition: all 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4 space-x-reverse">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-purple-600 font-bold text-xl">و</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">وليد الخلاقي</h1>
+                        <p class="text-purple-100 text-sm">waleedalkhulaqi.website</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6 space-x-reverse">
+                    <a href="#home" class="hover:text-purple-200 transition-colors">الرئيسية</a>
+                    <a href="#articles" class="hover:text-purple-200 transition-colors">المقالات</a>
+                    <a href="#about" class="hover:text-purple-200 transition-colors">عني</a>
+                    <a href="#contact" class="hover:text-purple-200 transition-colors">تواصل</a>
+                </nav>
+                <button id="menuBtn" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container">
-      <h1><a href="#" class="logo">وَلِيد الخلاقي</a></h1>
-      <nav class="nav">
-        <a href="#about">من أنا؟</a>
-        <a href="#methods">طرق الربح</a>
-        <a href="#tips">نصائح</a>
-        <a href="#contact">اتصل بي</a>
-      </nav>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-purple-700 text-white">
+        <div class="px-6 py-4 space-y-3">
+            <a href="#home" class="block hover:text-purple-200">الرئيسية</a>
+            <a href="#articles" class="block hover:text-purple-200">المقالات</a>
+            <a href="#about" class="block hover:text-purple-200">عني</a>
+            <a href="#contact" class="block hover:text-purple-200">تواصل</a>
+        </div>
     </div>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container">
-      <h2>كيف تربح من الإنترنت بدون رأس مال؟</h2>
-      <p>تجربتي الحقيقية – بدأت من الصفر، ولا زلت أتعلم.</p>
-      <a href="#methods" class="btn">ابدأ اليوم</a>
-    </div>
-  </section>
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold mb-6 fade-in">مرحباً بكم في موقعي</h2>
+            <p class="text-xl mb-8 text-purple-100 fade-in">أشارككم أفكاري ومقالاتي في مختلف المواضيع</p>
+            <button onclick="scrollToSection('articles')" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-50 transition-colors fade-in">
+                تصفح المقالات
+            </button>
+        </div>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2>من أنا؟</h2>
-      <p>
-        قبل عام، كنت مثل كثير من الشباب: أبحث عن فرصة للربح من الإنترنت، لكنني لا أملك رأس مال، ولا خبرة كبيرة.
-        لكن اليوم، أستطيع أن أقول: "بدأت، وبدأت بنجاح!".
-      </p>
-      <p>
-        أنا وليد الخلاقي، مُدرّب في مجال الربح من الإنترنت باللغة العربية. 
-        بدأت من الصفر، واستخدمت طرقًا حقيقية لبناء دخل ثابت دون الحاجة إلى استثمار.
-      </p>
-    </div>
-  </section>
+    <!-- Articles Section -->
+    <section id="articles" class="py-16">
+        <div class="container mx-auto px-6">
+            <h3 class="text-4xl font-bold text-center mb-12 text-gray-800">أحدث المقالات</h3>
+            
+            <!-- Add Article Form -->
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8">
+                <h4 class="text-2xl font-semibold mb-4 text-gray-800">إضافة مقال جديد</h4>
+                <form id="articleForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">عنوان المقال</label>
+                        <input type="text" id="articleTitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="أدخل عنوان المقال">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">محتوى المقال</label>
+                        <textarea id="articleContent" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="اكتب محتوى المقال هنا..."></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">الفئة</label>
+                        <select id="articleCategory" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                            <option value="تقنية">تقنية</option>
+                            <option value="ثقافة">ثقافة</option>
+                            <option value="رياضة">رياضة</option>
+                            <option value="صحة">صحة</option>
+                            <option value="أخرى">أخرى</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors">
+                        نشر المقال
+                    </button>
+                </form>
+            </div>
 
-  <!-- Methods Section -->
-  <section id="methods" class="section">
-    <div class="container">
-      <h2>طرق الربح التي جربتها بنفسي</h2>
-      
-      <div class="card">
-        <h3>1. التسويق بالعمولة</h3>
-        <p>انضممت إلى برنامج تابلاينك مجاني، وشاركت رابطي في مجموعات. كلما سجّل شخص عبر رابطي، حصلت على عمولة من 20 إلى 50 دولارًا!</p>
-      </div>
-      
-      <div class="card">
-        <h3>2. العمل الحر</h3>
-        <p>بدأت ببيع خدمة كتابة مقالات بالعربية على منصة خمسات. اليوم، أكسب من 50 إلى 100 دولار شهريًا.</p>
-      </div>
-      
-      <div class="card">
-        <h3>3. إنشاء محتوى</h3>
-        <p>أنشأت هذا الموقع بدون أي معرفة تقنية. تعلمت HTML من اليوتيوب، وصممت الموقع بنفسي. الآن أكتب مقالات وأخطط لإضافة إعلانات.</p>
-      </div>
-    </div>
-  </section>
+            <!-- Articles Grid -->
+            <div id="articlesGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sample Articles -->
+                <article class="article-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-medium">تقنية</span>
+                            <span class="text-gray-500 text-sm">منذ يومين</span>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">مستقبل الذكاء الاصطناعي</h4>
+                        <p class="text-gray-600 mb-4">نظرة على التطورات الحديثة في مجال الذكاء الاصطناعي وتأثيرها على حياتنا اليومية...</p>
+                        <button class="text-purple-600 font-medium hover:text-purple-800 transition-colors">اقرأ المزيد ←</button>
+                    </div>
+                </article>
 
-  <!-- Tips Section -->
-  <section id="tips" class="section">
-    <div class="container">
-      <h2>نصائح من تجربتي</h2>
-      <ul class="tips-list">
-        <li>ابدأ بسيطًا: لا تحاول بناء موقع كبير في أول يوم.</li>
-        <li>تعلم شيئًا جديدًا كل أسبوع: فيديو واحد قد يغير مستقبلك.</li>
-        <li>شارك رحلتك: الناس يحبون القصص الصادقة.</li>
-        <li>لا تستعجل النتائج: النجاح يحتاج وقت، لكنه يأتي.</li>
-      </ul>
-    </div>
-  </section>
+                <article class="article-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-medium">صحة</span>
+                            <span class="text-gray-500 text-sm">منذ أسبوع</span>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">أهمية النوم الصحي</h4>
+                        <p class="text-gray-600 mb-4">كيف يؤثر النوم على صحتنا الجسدية والنفسية، ونصائح للحصول على نوم أفضل...</p>
+                        <button class="text-purple-600 font-medium hover:text-purple-800 transition-colors">اقرأ المزيد ←</button>
+                    </div>
+                </article>
 
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <div class="container">
-      <h2>اتصل بي</h2>
-      <p>هل لديك سؤال؟ أو تريد نصيحة؟ لا تتردد في التواصل.</p>
-      <form class="contact-form">
-        <input type="text" placeholder="اسمك" required />
-        <input type="email" placeholder="بريدك الإلكتروني" required />
-        <textarea placeholder="رسالتك" rows="4"></textarea>
-        <button type="submit" class="btn">أرسل</button>
-      </form>
-    </div>
-  </section>
+                <article class="article-card bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-medium">ثقافة</span>
+                            <span class="text-gray-500 text-sm">منذ أسبوعين</span>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">التراث العربي الأصيل</h4>
+                        <p class="text-gray-600 mb-4">استكشاف جوانب من التراث العربي وأهمية المحافظة عليه للأجيال القادمة...</p>
+                        <button class="text-purple-600 font-medium hover:text-purple-800 transition-colors">اقرأ المزيد ←</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 وليد الخولقي. جميع الحقوق محفوظة.</p>
-      <p>تابعني على <a href="#">إنستغرام</a> | <a href="#">تويتر</a></p>
-    </div>
-  </footer>
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h3 class="text-4xl font-bold mb-8 text-gray-800">عن وليد الخلاقي</h3>
+                <div class="bg-gray-50 rounded-lg p-8">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                        مرحباً، أنا وليد الخلاقي. أحب مشاركة الأفكار والمعرفة من خلال الكتابة. 
+                        هذا الموقع هو منصتي لنشر المقالات في مختلف المواضيع التي تهمني وتهم القراء.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        أهدف إلى تقديم محتوى مفيد وممتع يثري المعرفة ويفتح آفاق جديدة للتفكير والنقاش.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</body>
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 gradient-bg text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-2xl mx-auto text-center">
+                <h3 class="text-4xl font-bold mb-8">تواصل معي</h3>
+                <div class="bg-white bg-opacity-10 rounded-lg p-8">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-center space-x-3 space-x-reverse">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <span class="text-lg">kas201066@gmail.com</span>
+                        </div>
+                        <div class="flex items-center justify-center space-x-3 space-x-reverse">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.083 9h1.946c.089-1.546.383-2.97.837-4.118A6.004 6.004 0 004.083 9zM10 2a8 8 0 100 16 8 8 0 000-16zm0 2c-.076 0-.232.032-.465.262-.238.234-.497.623-.737 1.182-.389.907-.673 2.142-.766 3.556h3.936c-.093-1.414-.377-2.649-.766-3.556-.24-.56-.5-.948-.737-1.182C10.232 4.032 10.076 4 10 4zm3.971 5c-.089-1.546-.383-2.97-.837-4.118A6.004 6.004 0 0115.917 9h-1.946zm-2.003 2H8.032c.093 1.414.377 2.649.766 3.556.24.56.5.948.737 1.182.233.23.389.262.465.262.076 0 .232-.032.465-.262.238-.234.498-.623.737-1.182.389-.907.673-2.142.766-3.556zm1.166 4.118c.454-1.147.748-2.572.837-4.118h1.946a6.004 6.004 0 01-2.783 4.118zm-6.268 0C6.412 13.97 6.118 12.546 6.03 11H4.083a6.004 6.004 0 002.783 4.118z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-lg">waleedalkhulaqi.website</span>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-purple-100">
+                        أرحب بتعليقاتكم واقتراحاتكم. لا تترددوا في التواصل معي!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">© 2024 وليد الخلاقي - جميع الحقوق محفوظة</p>
+            <p class="text-gray-400 text-sm"</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Add click events to navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                scrollToSection(targetId);
+                
+                // Close mobile menu if open
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+
+        // Article form submission
+        document.getElementById('articleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const title = document.getElementById('articleTitle').value;
+            const content = document.getElementById('articleContent').value;
+            const category = document.getElementById('articleCategory').value;
+            
+            if (title && content) {
+                addNewArticle(title, content, category);
+                
+                // Clear form
+                document.getElementById('articleTitle').value = '';
+                document.getElementById('articleContent').value = '';
+                
+                // Show success message
+                alert('تم نشر المقال بنجاح!');
+            } else {
+                alert('يرجى ملء جميع الحقول المطلوبة');
+            }
+        });
+
+        // Function to add new article
+        function addNewArticle(title, content, category) {
+            const articlesGrid = document.getElementById('articlesGrid');
+            
+            // Category colors
+            const categoryColors = {
+                'تقنية': 'bg-purple-100 text-purple-600',
+                'ثقافة': 'bg-blue-100 text-blue-600',
+                'رياضة': 'bg-red-100 text-red-600',
+                'صحة': 'bg-green-100 text-green-600',
+                'أخرى': 'bg-gray-100 text-gray-600'
+            };
+            
+            const articleHTML = `
+                <article class="article-card bg-white rounded-lg shadow-lg overflow-hidden fade-in">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="${categoryColors[category]} px-3 py-1 rounded-full text-sm font-medium">${category}</span>
+                            <span class="text-gray-500 text-sm">الآن</span>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">${title}</h4>
+                        <p class="text-gray-600 mb-4">${content.substring(0, 100)}${content.length > 100 ? '...' : ''}</p>
+                        <button class="text-purple-600 font-medium hover:text-purple-800 transition-colors">اقرأ المزيد ←</button>
+                    </div>
+                </article>
+            `;
+            
+            // Add new article at the beginning
+            articlesGrid.insertAdjacentHTML('afterbegin', articleHTML);
+        }
+
+        // Add fade-in animation to elements when they come into view
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all article cards
+        document.querySelectorAll('.article-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97b0568a77325c2c',t:'MTc1NzE4NjU3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
+
