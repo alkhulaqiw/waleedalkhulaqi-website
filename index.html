@@ -1,155 +1,357 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وَلِيد الخُلَاقي - مُطَوِّر ويب</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Arial', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            line-height: 1.6;
-            direction: rtl;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        header {
-            text-align: center;
-            padding: 60px 20px;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 5px solid rgba(255,255,255,0.3);
-            margin-bottom: 20px;
-        }
-        
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        
-        .subtitle {
-            font-size: 1.2em;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-        
-        .content {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 20px 0;
-        }
-        
-        .section {
-            margin: 30px 0;
-        }
-        
-        h2 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-        
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill {
-            background: rgba(255,255,255,0.2);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
-        }
-        
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .contact-link {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border: 2px solid white;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-link:hover {
-            background: white;
-            color: #667eea;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 30px;
-            margin-top: 30px;
-            opacity: 0.8;
-        }
-    </style>
+head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>وليد الخلاقي | Portfolio</title>
+  <title>وَليد الخلاقي | الربح من الإنترنت</title>
+  <meta name="description" content="موقع وليد الخلاقي - أتعلم وأعمل وأربح من الإنترنت خطوة بخطوة">
+  <style>
+    /* التنسيق العام */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7f9fc;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+      line-height: 1.8;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header {
+      margin-bottom: 40px;
+      background: #0d6efd;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    nav {
+      background: #0d47a1;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #3498db;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .bio {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #555;
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    h1, h2, h3 {
+      color: #0d6efd;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+    .btn {
+      display: inline-block;
+      background: #0d6efd;
+      color: white;
+      border-radius: 50%;
+      padding: 0.8rem 1.5rem;
+      margin-top: 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1.4rem;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      font-weight: bold;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px);
+      background-color: #2980b9;
+    .btn:hover {
+      background: #0b5ed7;
+    }
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
+      font-size: 0.9rem;
+      color: #95a5a6;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #f1f1f1;
+      color: #555;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .container {
+        padding: 20px;
+      }
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="https://via.placeholder.com/150" alt="الصورة الشخصية" class="profile-img">
-            <h1>وَلِيد الخُلَاقي</h1>
-            <p class="subtitle">مُطَوِّر ويب و مهندس برمجيات</p>
-        </header>
-        
-        <div class="content">
-            <div class="section">
-                <h2>👋 نبذة عني</h2>
-                <p>أهلاً بك في موقعي الشخصي! أنا مطور ويب متحمس لإنشاء تطبيقات ويب رائعة وتجربة مستخدم مميزة.</p>
-            </div>
-            
-            <div class="section">
-                <h2>🛠 المهارات</h2>
-                <div class="skills">
-                    <span class="skill">HTML/CSS</span>
-                    <span class="skill">JavaScript</span>
-                    <span class="skill">React</span>
-                    <span class="skill">Node.js</span>
-                    <span class="skill">Python</span>
-                    <span class="skill">Git</span>
-                </div>
-            </div>
-            
-            <div class="section">
-                <h2>🎯 الأهداف</h2>
-                <p>التطوير المستمر في مجال البرمجة وتعلم التقنيات الحديثة لإنشاء حلول مبتكرة.</p>
-            </div>
-        </div>
-        
-        <div class="contact-links">
-            <a href="mailto:your-email@gmail.com" class="contact-link">📧 البريد الإلكتروني</a>
-            <a href="https://github.com/yourusername" class="contact-link">💻 GitHub</a>
-            <a href="https://linkedin.com/in/yourprofile" class="contact-link">🔗 LinkedIn</a>
-        </div>
-        
-        <footer>
-            <p>&copy; 2024 وَلِيد الخُلَاقي. جميع الحقوق محفوظة.</p>
-        </footer>
+
+  <div class="container">
+  <header>
+    <h1>وَليد الخلاقي</h1>
+    <p>أحول الأفكار إلى نتائج رقمية</p>
+  </header>
+
+  <nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#about">من أنا</a>
+    <a href="#services">خدماتي</a>
+    <a href="#blog">مدونتي<<article>
+  <h2>كيف تربح من الإنترنت بدون رأس مال؟ – تجربتي الحقيقية</h2>
+  <p><em>نشر في: 5 أبريل 2025 | بواسطة: وليد الخلاقي</em></p>
+
+  <p>
+    قبل عام، كنت مثل كثير من الشباب: أبحث عن فرصة للربح من الإنترنت، لكنني لا أملك رأس مال، ولا خبرة كبيرة، ولا حتى جهاز كمبيوتر قوي.
+  </p>
+  <p>
+    لكن اليوم، أستطيع أن أقول: "بدأت، وبدأت بنجاح!".
+  </p>
+
+  <h3>الحقيقة التي لم يخبرني بها أحد</h3>
+  <p>
+    لا يوجد طريق سريع للثراء من الإنترنت. لكن هناك طرق <strong>حقيقية</strong> تمنحك دخلًا ثابتًا، حتى بدون رأس مال. كل ما تحتاجه هو:
+  </p>
+  <ul>
+    <li>الانترنت</li>
+    <li>جهاز (هاتف أو كمبيوتر)</li>
+    <li>الرغبة في التعلم</li>
+    <li>الاستمرارية</li>
+  </ul>
+
+  <h3>طرق الربح التي جربتها بنفسي</h3>
+
+  <h4>1. التسويق بالعمولة (Affiliate Marketing)</h4>
+  <p>
+    هذه الطريقة كانت أول نجاح حقيقي لي. كل ما فعلته هو:
+  </p>
+  <ol>
+    <li>انضممت إلى برنامج تابلاينك مجاني (مثل: <a href="https://systeme.io" target="_blank">Systeme.io</a> أو <a href="https://getresponse.com" target="_blank">GetResponse</a>)</li>
+    <li>شاركت رابطي في مجموعات فيسبوك، تيليجرام، وتوتير</li>
+    <li>كلما سجّل شخص عبر رابطي، حصلت على عمولة (من 20 إلى 50 دولارًا أحيانًا!)</li>
+  </ol>
+  <p>
+    <strong>ملاحظة:</strong> لا تبيع منتجات وهمية. ركّز على منتجات رقمية حقيقية تُعلّم الناس شيئًا.
+  </p>
+
+  <h4>2. العمل الحر (Freelancing)</h4>
+  <p>
+    بدأت ببيع خدمة بسيطة: "كتابة مقالات بالعربية". ذهبت إلى منصة <a href="https://khamsat.com" target="_blank">خمسات</a>، ووضعت عرضًا بـ 5 دولارات.
+  </p>
+  <p>
+    في الأسبوع الأول، لم أحصل على طلب. لكنني واصلت، وكتبت عينة مجانية لعرضها.
+    في الأسبوع الثاني، حصلت على أول طلب!
+  </p>
+  <p>
+    اليوم، أكسب من 50 إلى 100 دولار شهريًا من هذه الطريقة.
+  </p>
+
+    <header>
+      <img src="https://via.placeholder.com/150" alt="صورة شخصية" class="profile-img" />
+      <h1>وليد الخلاقي</h1>
+      <p class="subtitle">مطوّر ويب | مبرمج | مهتم بالتقنية</p>
+    </header>
+  <h4>3. إنشاء محتوى (مدونة أو يوتيوب)</h4>
+  <p>
+    بدأت هذا الموقع (waleedalkhulaqi.website) بدون أي معرفة تقنية. تعلمت HTML من اليوتيوب، وصممت الموقع بنفسي.
+  </p>
+  <p>
+    الآن، أكتب مقالات عن "الربح من الإنترنت"، وسأضع إعلانات (مثل Google AdSense) عندما أصل إلى 1000 زائر شهريًا.
+  </p>
+  <p>
+    <strong>السر:</strong> كل مقال أكتبه اليوم قد يجلب لي دخلًا غدًا.
+  </p>
+
+    <p class="bio">
+      أنا وليد الخلاقي، مطور ويب متخصص في بناء مواقع جميلة وسريعة. أحب التعلم المستمر، وأسعى لتحسين مهاراتي كل يوم. 
+      أعمل على مشاريع صغيرة ومشاريع حقيقية لبناء محفظة أعمال قوية.
+  <h3>نصائح من تجربتي</h3>
+  <ul>
+    <li><strong>ابدأ بسيطًا:</strong> لا تحاول بناء موقع مثل أمازون في أول يوم.</li>
+    <li><strong>تعلم شيئًا جديدًا كل أسبوع:</strong> فيديو واحد على يوتيوب قد يغير مستقبلك.</li>
+    <li><strong>شارك رحلتك:</strong> الناس يحبون القصص الصادقة.</li>
+    <li><strong>لا تستعجل النتائج:</strong> النجاح يحتاج وقت، لكنه يأتي.</li>
+  </ul>
+
+  <h3>خلاصة</h3>
+  <p>
+    نعم، يمكنك الربح من الإنترنت بدون رأس مال. لكنك تحتاج إلى شيء أهم: <strong>الإرادة</strong>.
+  </p>
+  <p>
+    أنا وليد الخلاقي، بدأت من الصفر، ولا زلت أتعلم. إذا استطعت أنا، فبإمكانك أنت أيضًا.
+  </p>
+  <p>
+    <strong>ابدأ اليوم، ولا تؤجل.</strong>
+  </p>
+
+  <p style="text-align: center; margin-top: 2rem; padding: 1rem; background: #f1f1f1; border-radius: 5px;">
+    هل أعجبتك المقالة؟ شاركها مع صديق يحتاج إلى دفعة تحفيزية!
+  </p>
+</article>>
+    <a href="#contact">اتصل بي</a>
+  </nav>
+
+  <section id="home">
+    <h2>مرحبًا! أنا وليد الخلاقي</h2>
+    <p>
+      أُركّز على بناء مشروعي الرقمي خطوة بخطوة. أتعلم يوميًا في مجالات التسويق الرقمي، كتابة المحتوى، والربح من الإنترنت.
+      أؤمن أن البدء البسيط هو أول طريق النجاح.
+    </p>
+    <p>
+      هذا الموقع هو سجلي الحي، حيث أشارك رحلتي، أعمالي، ونصائح للربح من الإنترنت.
+    </p>
+    <a href="#contact" class="btn">ابقَ على تواصل</a>
+  </section>
+
+  <section id="about">
+    <h2>من أنا؟</h2>
+    <p>
+      أنا وليد الخلاقي، شاب طموح من دولة اليمن، أؤمن بأن الإنترنت فرصة حقيقية للتعلم والربح. بدأت رحلتي في مجال العمل الحر والربح من الإنترنت منذ عام 2024، وأتعلم يوميًا.
+    </p>
+    <p>
+      أفضل أن أعمل بنفسي، لكنني لا أرفض المساعدة عندما أحتاجها. أركز الآن على تطوير مهاراتي في:
+    </p>
+    <ul>
+      <li>كتابة المحتوى العربي</li>
+      <li>التسويق الرقمي</li>
+      <li>إدارة وسائل التواصل الاجتماعي</li>
+      <li>البرمجة الأساسية (HTML, CSS)</li>
+    </ul>
+    <p>
+      هدفي: بناء مصدر دخل رقمي مستقل، والوصول إلى الحرية المالية.
+    </p>
+  </section>
+
+  <section id="services">
+    <h2>خدماتي</h2>
+    <p>أقدم خدمات بسيطة ومفيدة للشركات والأفراد:</p>
+    <ul>
+      <li><strong>كتابة مقالات ومحتوى عربي</strong>: لمواقع، مدونات، أو صفحات.</li>
+      <li><strong>إدارة صفحات السوشيال ميديا</strong>: فيسبوك، تويتر، إنستغرام.</li>
+      <li><strong>التسويق بالعمولة</strong>: الترويج لمنتجات رقمية بروابط تابعة.</li>
+      <li><strong>تصميم بوسترات بسيطة</strong>: باستخدام Canva.</li>
+    </ul>
+    <p>هل تبحث عن خدمة؟ <a href="#contact" class="btn">تواصل معي الآن</a></p>
+  </section>
+
+    <div class="social-links">
+      <a href="https://github.com/waleedalkhulaqi" target="_blank">GH</a>
+      <a href="https://linkedin.com/in/waleedalkhulaqi" target="_blank">LI</a>
+      <a href="mailto:waleed@example.com" target="_blank">✉️</a>
     </div>
+  <section id="blog">
+    <h2>مدونتي</h2>
+    <p>هنا أشارك تجربتي ونصائح للربح من الإنترنت:</p>
+    <ul>
+      <li><strong>كيف تربح من الإنترنت بدون رأس مال؟</strong> – تجربتي الشخصية</li>
+      <li><strong>أفضل 5 طرق للربح من الإنترنت في 2025</strong></li>
+      <li><strong>كيف بدأت هذا الموقع بنفسي؟</strong></li>
+      <li><strong>ما الفرق بين التسويق بالعمولة والعمل الحر؟</strong></li>
+    </ul>
+    <p>تابع التحديثات قريبًا!</p>
+  </section>
+
+    <footer>
+      &copy; 2025 وليد الخلاقي. جميع الحقوق محفوظة.
+    </footer>
+  <section id="contact">
+    <h2>اتصل بي</h2>
+    <p>لأي استفسار أو طلب خدمة، تواصل معي عبر البريد:</p>
+    <p><strong>البريد: kas201066@gmail.com</strong></p>
+    
+    <form class="contact-form" action="#" method="post">
+      <input type="text" placeholder="اسمك" required />
+      <input type="email" placeholder="بريدك الإلكتروني" required />
+      <input type="text" placeholder="الموضوع" required />
+      <textarea rows="5" placeholder="رسالتك..." required></textarea>
+      <button type="submit" class="btn">إرسال الرسالة</button>
+    </form>
+    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+      سأرد عليك في أقرب وقت ممكن.
+    </p>
+  </section>
+
+  </div>
+  <footer>
+    <p>© 2025 وَليد الخلاقي. جميع الحقوق محفوظة.</p>
+    <p>الموقع مُبنى بحب وعمل مستقل</p>
+  </footer>
+
 </body>
 </html>
