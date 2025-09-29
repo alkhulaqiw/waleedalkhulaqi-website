@@ -1,843 +1,145 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>وليد الخلاقي - منصة المحتوى الذكية</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        }
-        
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-        
-        .card-hover:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-        
-        .upload-area {
-            border: 2px dashed #cbd5e0;
-            transition: all 0.3s ease;
-        }
-        
-        .upload-area:hover {
-            border-color: #667eea;
-            background-color: #f7fafc;
-        }
-        
-        .upload-area.dragover {
-            border-color: #667eea;
-            background-color: #ebf8ff;
-        }
-        
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        @media (max-width: 768px) {
-            .content-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 1000;
-        }
-        
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .search-highlight {
-            background-color: #fef08a;
-            padding: 2px 4px;
-            border-radius: 3px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>وليد الخولقي | كيف تربح من الإنترنت بدون رأس مال؟</title>
+  <meta name="description" content="تجربتي الحقيقية في الربح من الإنترنت بدون رأس مال. تعلمت HTML وصممت موقعي بنفسي. اكتشف طرق الربح التي جربتها وأنا أشاركك كل خطوة.">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <!-- End Google Analytics -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+    }
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+    nav ul li {
+      display: inline;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+    }
+    nav ul li a:hover {
+      background-color: #555;
+    }
+    main {
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    .related-posts {
+      margin-top: 20px;
+    }
+    .related-posts h3 {
+      margin-bottom: 10px;
+    }
+    .related-posts ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .related-posts ul li {
+      margin-bottom: 5px;
+    }
+    .related-posts ul li a {
+      text-decoration: none;
+      color: #333;
+    }
+    .related-posts ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center space-x-4 space-x-reverse">
-                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                        <i class="fas fa-user text-purple-600 text-xl"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-2xl font-bold">وليد الخلاقي</h1>
-                        <p class="text-purple-200">منصة المحتوى الذكية</p>
-                        <p class="text-purple-100 text-sm">info@waleedalkhulaqi.website</p>
-                    </div>
-                </div>
-                <nav class="hidden md:flex space-x-6 space-x-reverse">
-                    <button onclick="showSection('home')" class="nav-btn hover:text-purple-200 transition-colors">الرئيسية</button>
-                    <button onclick="showSection('upload')" class="nav-btn hover:text-purple-200 transition-colors">رفع محتوى</button>
-                    <button onclick="showSection('gallery')" class="nav-btn hover:text-purple-200 transition-colors">المعرض</button>
-                    <button onclick="showSection('analytics')" class="nav-btn hover:text-purple-200 transition-colors">الإحصائيات</button>
-                </nav>
-                <button class="md:hidden text-white" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars text-xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-purple-800 px-6 py-4">
-            <button onclick="showSection('home')" class="block w-full text-right py-2 hover:text-purple-200">الرئيسية</button>
-            <button onclick="showSection('upload')" class="block w-full text-right py-2 hover:text-purple-200">رفع محتوى</button>
-            <button onclick="showSection('gallery')" class="block w-full text-right py-2 hover:text-purple-200">المعرض</button>
-            <button onclick="showSection('analytics')" class="block w-full text-right py-2 hover:text-purple-200">الإحصائيات</button>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="container mx-auto px-6 py-8">
-        <!-- Home Section -->
-        <section id="homeSection" class="section">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">مرحباً بك في منصة المحتوى الذكية</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">شارك وأدر جميع أنواع المحتوى المرئي والمسموع بطريقة احترافية وذكية</p>
-            </div>
-
-            <!-- Quick Stats -->
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
-                    <i class="fas fa-photo-video text-3xl text-blue-500 mb-3"></i>
-                    <h3 class="text-2xl font-bold text-gray-800" id="videoCount">0</h3>
-                    <p class="text-gray-600">مقاطع فيديو</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
-                    <i class="fas fa-images text-3xl text-green-500 mb-3"></i>
-                    <h3 class="text-2xl font-bold text-gray-800" id="imageCount">0</h3>
-                    <p class="text-gray-600">صور</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
-                    <i class="fas fa-music text-3xl text-purple-500 mb-3"></i>
-                    <h3 class="text-2xl font-bold text-gray-800" id="audioCount">0</h3>
-                    <p class="text-gray-600">ملفات صوتية</p>
-                </div>
-                <div class="bg-white rounded-lg shadow-md p-6 text-center card-hover">
-                    <i class="fas fa-file-alt text-3xl text-orange-500 mb-3"></i>
-                    <h3 class="text-2xl font-bold text-gray-800" id="documentCount">0</h3>
-                    <p class="text-gray-600">مستندات</p>
-                </div>
-            </div>
-
-            <!-- Recent Content -->
-            <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-2xl font-bold text-gray-800 mb-6">المحتوى الأخير</h3>
-                <div id="recentContent" class="content-grid">
-                    <div class="text-center text-gray-500 py-12">
-                        <i class="fas fa-cloud-upload-alt text-6xl mb-4"></i>
-                        <p class="text-xl">ابدأ برفع محتواك الأول!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Upload Section -->
-        <section id="uploadSection" class="section hidden">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">رفع محتوى جديد</h2>
-                
-                <div class="bg-white rounded-lg shadow-md p-8">
-                    <!-- Upload Area -->
-                    <div id="uploadArea" class="upload-area rounded-lg p-12 text-center mb-6">
-                        <i class="fas fa-cloud-upload-alt text-6xl text-gray-400 mb-4"></i>
-                        <h3 class="text-xl font-semibold text-gray-700 mb-2">اسحب الملفات هنا أو انقر للاختيار</h3>
-                        <p class="text-gray-500 mb-4">يدعم جميع أنواع الملفات: صور، فيديو، صوت، مستندات</p>
-                        <input type="file" id="fileInput" multiple accept="*/*" class="hidden">
-                        <button onclick="document.getElementById('fileInput').click()" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
-                            اختر الملفات
-                        </button>
-                    </div>
-
-                    <!-- Upload Form -->
-                    <form id="uploadForm" class="space-y-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">عنوان المحتوى</label>
-                                <input type="text" id="contentTitle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="أدخل عنوان المحتوى">
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-semibold mb-2">الفئة</label>
-                                <select id="contentCategory" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                    <option value="">اختر الفئة</option>
-                                    <option value="video">فيديو</option>
-                                    <option value="image">صورة</option>
-                                    <option value="audio">صوت</option>
-                                    <option value="document">مستند</option>
-                                    <option value="other">أخرى</option>
-                                </select>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">الوصف</label>
-                            <textarea id="contentDescription" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="أضف وصفاً للمحتوى"></textarea>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-gray-700 font-semibold mb-2">الكلمات المفتاحية</label>
-                            <input type="text" id="contentTags" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="أدخل الكلمات المفتاحية مفصولة بفواصل">
-                        </div>
-
-                        <div class="flex items-center space-x-4 space-x-reverse">
-                            <label class="flex items-center">
-                                <input type="checkbox" id="isPublic" class="ml-2 text-purple-600">
-                                <span class="text-gray-700">محتوى عام (يمكن للجميع رؤيته)</span>
-                            </label>
-                        </div>
-
-                        <button type="submit" class="w-full bg-purple-600 text-white py-3 rounded-lg hover:bg-purple-700 transition-colors font-semibold">
-                            <i class="fas fa-upload ml-2"></i>
-                            رفع المحتوى
-                        </button>
-                    </form>
-
-                    <!-- Upload Progress -->
-                    <div id="uploadProgress" class="hidden mt-6">
-                        <div class="bg-gray-200 rounded-full h-3">
-                            <div id="progressBar" class="bg-purple-600 h-3 rounded-full transition-all duration-300" style="width: 0%"></div>
-                        </div>
-                        <p id="progressText" class="text-center mt-2 text-gray-600">جاري الرفع...</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery Section -->
-        <section id="gallerySection" class="section hidden">
-            <div class="mb-8">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6">معرض المحتوى</h2>
-                
-                <!-- Search and Filter -->
-                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div>
-                            <input type="text" id="searchInput" placeholder="البحث في المحتوى..." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                        </div>
-                        <div>
-                            <select id="filterCategory" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                <option value="">جميع الفئات</option>
-                                <option value="video">فيديو</option>
-                                <option value="image">صورة</option>
-                                <option value="audio">صوت</option>
-                                <option value="document">مستند</option>
-                                <option value="other">أخرى</option>
-                            </select>
-                        </div>
-                        <div>
-                            <select id="sortBy" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-                                <option value="newest">الأحدث</option>
-                                <option value="oldest">الأقدم</option>
-                                <option value="name">الاسم</option>
-                                <option value="size">الحجم</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Content Grid -->
-            <div id="contentGrid" class="content-grid">
-                <div class="text-center text-gray-500 py-12 col-span-full">
-                    <i class="fas fa-folder-open text-6xl mb-4"></i>
-                    <p class="text-xl">لا يوجد محتوى بعد</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Analytics Section -->
-        <section id="analyticsSection" class="section hidden">
-            <h2 class="text-3xl font-bold text-gray-800 mb-8">الإحصائيات والتحليلات</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Storage Usage -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">استخدام التخزين</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between mb-2">
-                                <span class="text-gray-600">المساحة المستخدمة</span>
-                                <span class="font-semibold" id="usedStorage">0 MB</span>
-                            </div>
-                            <div class="bg-gray-200 rounded-full h-3">
-                                <div id="storageBar" class="bg-blue-500 h-3 rounded-full" style="width: 0%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Content Types Chart -->
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">توزيع أنواع المحتوى</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <div class="w-4 h-4 bg-blue-500 rounded ml-3"></div>
-                                <span>فيديو</span>
-                            </div>
-                            <span id="videoPercentage">0%</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <div class="w-4 h-4 bg-green-500 rounded ml-3"></div>
-                                <span>صور</span>
-                            </div>
-                            <span id="imagePercentage">0%</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <div class="w-4 h-4 bg-purple-500 rounded ml-3"></div>
-                                <span>صوت</span>
-                            </div>
-                            <span id="audioPercentage">0%</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center">
-                                <div class="w-4 h-4 bg-orange-500 rounded ml-3"></div>
-                                <span>مستندات</span>
-                            </div>
-                            <span id="documentPercentage">0%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Recent Activity -->
-                <div class="bg-white rounded-lg shadow-md p-6 lg:col-span-2">
-                    <h3 class="text-xl font-semibold text-gray-800 mb-4">النشاط الأخير</h3>
-                    <div id="activityLog" class="space-y-3">
-                        <div class="text-center text-gray-500 py-8">
-                            <i class="fas fa-chart-line text-4xl mb-3"></i>
-                            <p>لا يوجد نشاط بعد</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Content Modal -->
-    <div id="contentModal" class="modal">
-        <div class="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-auto m-4">
-            <div class="p-6 border-b border-gray-200 flex justify-between items-center">
-                <h3 id="modalTitle" class="text-xl font-semibold"></h3>
-                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700">
-                    <i class="fas fa-times text-xl"></i>
-                </button>
-            </div>
-            <div id="modalContent" class="p-6">
-                <!-- Content will be loaded here -->
-            </div>
-            <div class="p-6 border-t border-gray-200 flex justify-end space-x-4 space-x-reverse">
-                <button onclick="shareContent()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-                    <i class="fas fa-share ml-2"></i>مشاركة
-                </button>
-                <button onclick="downloadContent()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
-                    <i class="fas fa-download ml-2"></i>تحميل
-                </button>
-                <button onclick="deleteContent()" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
-                    <i class="fas fa-trash ml-2"></i>حذف
-                </button>
-            </div>
-        </div>
+<body>
+  <nav>
+    <ul>
+      <li><a href="index.html">الرئيسية</a></li>
+      <li><a href="about.html">من أنا</a></li>
+      <li><a href="blog.html">المدونة</a></li>
+      <li><a href="contact.html">اتصل بي</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>كيف تربح من الإنترنت بدون رأس مال؟ – تجربتي الحقيقية</h1>
+    <p>*نشر في: 5 أبريل 2024 | بواسطة: وليد الخولقي*</p>
+    <p>قبل عام، كنت مثل كثير من الشباب: أبحث عن فرصة للربح من الإنترنت، لكنني لا أملك رأس مال، ولا خبرة كبيرة، ولا حتى جهاز كمبيوتر قوي. لكن اليوم، أستطيع أن أقول: "بدأت، وبدأت بنجاح!".</p>
+    
+    <h2>الحقيقة التي لم يخبرني بها أحد</h2>
+    <p>لا يوجد طريق سريع للثراء من الإنترنت. لكن هناك طرق <strong>حقيقية</strong> تمنحك دخلًا ثابتًا، حتى بدون رأس مال. كل ما تحتاجه هو:</p>
+    <ul>
+      <li>الإنترنت</li>
+      <li>جهاز (هاتف أو كمبيوتر)</li>
+      <li>الرغبة في التعلم</li>
+      <li>الاستمرارية</li>
+    </ul>
+    
+    <h2>طرق الربح التي جربتها بنفسي</h2>
+    
+    <h3>1. التسويق بالعمولة (Affiliate Marketing)</h3>
+    <p>هذه الطريقة كانت أول نجاح حقيقي لي. كل ما فعلته هو:</p>
+    <ul>
+      <li>انضممت إلى برنامج تابلاينك مجاني (مثل: Systeme.io أو GetResponse)</li>
+      <li>شارك رابطي في مجموعات فيسبوك، تيليجرام، وتوتير</li>
+      <li>كلما سجّل شخص عبر رابطي، حصلت على عمولة (من 20 إلى 50 دولارًا أحيانًا!)</li>
+    </ul>
+    <p><strong>ملاحظة:</strong> لا تبيع منتجات وهمية. ركّز على منتجات رقمية حقيقية تُعلّم الناس شيئًا.</p>
+    
+    <h3>2. العمل الحر (Freelancing)</h3>
+    <p>بدأت ببيع خدمة بسيطة: "كتابة مقالات بالعربية". ذهبت إلى منصة خمسات، ووضعت عرضًا بـ 5 دولارات.</p>
+    <p>في الأسبوع الأول، لم أحصل على طلب. لكنني واصلت، وكتبت عينة مجانية لعرضها.</p>
+    <p>في الأسبوع الثاني، حصلت على أول طلب!</p>
+    <p>اليوم، أكسب من 50 إلى 100 دولار شهريًا من هذه الطريقة.</p>
+    
+    <h3>3. إنشاء محتوى (مدونة أو يوتيوب)</h3>
+    <p>بدأت هذا الموقع (waleedalkhulaqi.website) بدون أي معرفة تقنية. تعلمت HTML من اليوتيوب، وصممت الموقع بنفسي.</p>
+    <p>الآن، أكتب مقالات عن "الربح من الإنترنت"، وسأضع إعلانات (مثل Google AdSense) عندما أصل إلى 1000 زائر شهريًا.</p>
+    <p><strong>السر:</strong> كل مقال أكتبه اليوم قد يجلب لي دخلًا غدًا.</p>
+    
+    <h2>نصائح من تجربتي</h2>
+    <ul>
+      <li><strong>ابدأ بسيطًا:</strong> لا تحاول بناء موقع مثل أمازون في أول يوم.</li>
+      <li><strong>تعلم شيئًا جديدًا كل أسبوع:</strong> فيديو واحد على يوتيوب قد يغير مستقبلك.</li>
+      <li><strong>شارك رحلتك:</strong> الناس يحبون القصص الصادقة.</li>
+      <li><strong>لا تستعجل النتائج:</strong> النجاح يحتاج وقت، لكنه يأتي.</li>
+    </ul>
+    
+    <h2>خلاصة</h2>
+    <p>نعم، يمكنك الربح من الإنترنت بدون رأس مال. لكنك تحتاج إلى شيء أهم: <strong>الإرادة</strong>.</p>
+    <p>أنا وليد الخولقي، بدأت من الصفر، ولا زلت أتعلم. إذا استطعت أنا، فبإمكانك أنت أيضًا.</p>
+    <p><strong>ابدأ اليوم، ولا تؤجل.</strong></p>
+    <p>هل أعجبتك المقالة؟ شاركها مع صديق يحتاج إلى دفعة تحفيزية!</p>
+    
+    <div class="related-posts">
+      <h3>قد يهمك أيضًا:</h3>
+      <ul>
+        <li><a href="article1.html">كيف تبدأ في التسويق بالعمولة من الصفر</a></li>
+        <li><a href="article2.html">أفضل منصات العمل الحر للمبتدئين</a></li>
+      </ul>
     </div>
-
-    <script>
-        // Global variables
-        let contentData = JSON.parse(localStorage.getItem('contentData')) || [];
-        let currentContent = null;
-
-        // Initialize the app
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeApp();
-            updateStats();
-            renderContent();
-            setupEventListeners();
-        });
-
-        function initializeApp() {
-            showSection('home');
-        }
-
-        function setupEventListeners() {
-            // File input change
-            document.getElementById('fileInput').addEventListener('change', handleFileSelect);
-            
-            // Drag and drop
-            const uploadArea = document.getElementById('uploadArea');
-            uploadArea.addEventListener('dragover', handleDragOver);
-            uploadArea.addEventListener('dragleave', handleDragLeave);
-            uploadArea.addEventListener('drop', handleDrop);
-            
-            // Upload form
-            document.getElementById('uploadForm').addEventListener('submit', handleUpload);
-            
-            // Search and filter
-            document.getElementById('searchInput').addEventListener('input', filterContent);
-            document.getElementById('filterCategory').addEventListener('change', filterContent);
-            document.getElementById('sortBy').addEventListener('change', filterContent);
-        }
-
-        function showSection(sectionName) {
-            // Hide all sections
-            document.querySelectorAll('.section').forEach(section => {
-                section.classList.add('hidden');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionName + 'Section').classList.remove('hidden');
-            
-            // Update nav buttons
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('text-purple-200');
-            });
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-
-        function handleDragOver(e) {
-            e.preventDefault();
-            e.currentTarget.classList.add('dragover');
-        }
-
-        function handleDragLeave(e) {
-            e.currentTarget.classList.remove('dragover');
-        }
-
-        function handleDrop(e) {
-            e.preventDefault();
-            e.currentTarget.classList.remove('dragover');
-            const files = e.dataTransfer.files;
-            handleFiles(files);
-        }
-
-        function handleFileSelect(e) {
-            const files = e.target.files;
-            handleFiles(files);
-        }
-
-        function handleFiles(files) {
-            const fileList = Array.from(files);
-            fileList.forEach(file => {
-                displayFilePreview(file);
-            });
-        }
-
-        function displayFilePreview(file) {
-            const uploadArea = document.getElementById('uploadArea');
-            const preview = document.createElement('div');
-            preview.className = 'bg-gray-100 rounded-lg p-4 mb-4 flex items-center justify-between';
-            
-            const fileInfo = document.createElement('div');
-            fileInfo.className = 'flex items-center';
-            
-            const icon = getFileIcon(file.type);
-            fileInfo.innerHTML = `
-                <i class="${icon} text-2xl ml-3"></i>
-                <div>
-                    <p class="font-semibold">${file.name}</p>
-                    <p class="text-sm text-gray-500">${formatFileSize(file.size)}</p>
-                </div>
-            `;
-            
-            const removeBtn = document.createElement('button');
-            removeBtn.innerHTML = '<i class="fas fa-times text-red-500"></i>';
-            removeBtn.onclick = () => preview.remove();
-            
-            preview.appendChild(fileInfo);
-            preview.appendChild(removeBtn);
-            uploadArea.appendChild(preview);
-        }
-
-        function handleUpload(e) {
-            e.preventDefault();
-            
-            const title = document.getElementById('contentTitle').value;
-            const category = document.getElementById('contentCategory').value;
-            const description = document.getElementById('contentDescription').value;
-            const tags = document.getElementById('contentTags').value;
-            const isPublic = document.getElementById('isPublic').checked;
-            const files = document.getElementById('fileInput').files;
-            
-            if (!title || !category || files.length === 0) {
-                alert('يرجى ملء جميع الحقول المطلوبة واختيار ملف واحد على الأقل');
-                return;
-            }
-            
-            // Show progress
-            document.getElementById('uploadProgress').classList.remove('hidden');
-            
-            // Simulate upload progress
-            let progress = 0;
-            const progressInterval = setInterval(() => {
-                progress += Math.random() * 20;
-                if (progress >= 100) {
-                    progress = 100;
-                    clearInterval(progressInterval);
-                    completeUpload();
-                }
-                
-                document.getElementById('progressBar').style.width = progress + '%';
-                document.getElementById('progressText').textContent = `جاري الرفع... ${Math.round(progress)}%`;
-            }, 200);
-            
-            function completeUpload() {
-                // Save content data
-                Array.from(files).forEach(file => {
-                    const content = {
-                        id: Date.now() + Math.random(),
-                        title: title,
-                        category: category,
-                        description: description,
-                        tags: tags.split(',').map(tag => tag.trim()),
-                        isPublic: isPublic,
-                        fileName: file.name,
-                        fileSize: file.size,
-                        fileType: file.type,
-                        uploadDate: new Date().toISOString(),
-                        fileData: null // In a real app, this would be uploaded to a server
-                    };
-                    
-                    contentData.push(content);
-                });
-                
-                // Save to localStorage
-                localStorage.setItem('contentData', JSON.stringify(contentData));
-                
-                // Reset form
-                document.getElementById('uploadForm').reset();
-                document.getElementById('uploadProgress').classList.add('hidden');
-                document.getElementById('uploadArea').innerHTML = `
-                    <i class="fas fa-cloud-upload-alt text-6xl text-gray-400 mb-4"></i>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">اسحب الملفات هنا أو انقر للاختيار</h3>
-                    <p class="text-gray-500 mb-4">يدعم جميع أنواع الملفات: صور، فيديو، صوت، مستندات</p>
-                    <button onclick="document.getElementById('fileInput').click()" class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
-                        اختر الملفات
-                    </button>
-                `;
-                
-                // Update stats and content
-                updateStats();
-                renderContent();
-                addActivity(`تم رفع ${files.length} ملف جديد`);
-                
-                alert('تم رفع المحتوى بنجاح!');
-            }
-        }
-
-        function updateStats() {
-            const stats = {
-                video: contentData.filter(item => item.category === 'video').length,
-                image: contentData.filter(item => item.category === 'image').length,
-                audio: contentData.filter(item => item.category === 'audio').length,
-                document: contentData.filter(item => item.category === 'document').length
-            };
-            
-            document.getElementById('videoCount').textContent = stats.video;
-            document.getElementById('imageCount').textContent = stats.image;
-            document.getElementById('audioCount').textContent = stats.audio;
-            document.getElementById('documentCount').textContent = stats.document;
-            
-            // Update percentages
-            const total = contentData.length;
-            if (total > 0) {
-                document.getElementById('videoPercentage').textContent = Math.round((stats.video / total) * 100) + '%';
-                document.getElementById('imagePercentage').textContent = Math.round((stats.image / total) * 100) + '%';
-                document.getElementById('audioPercentage').textContent = Math.round((stats.audio / total) * 100) + '%';
-                document.getElementById('documentPercentage').textContent = Math.round((stats.document / total) * 100) + '%';
-            }
-            
-            // Update storage
-            const totalSize = contentData.reduce((sum, item) => sum + item.fileSize, 0);
-            document.getElementById('usedStorage').textContent = formatFileSize(totalSize);
-            const storagePercentage = Math.min((totalSize / (1024 * 1024 * 1024)) * 100, 100); // Assume 1GB limit
-            document.getElementById('storageBar').style.width = storagePercentage + '%';
-        }
-
-        function renderContent() {
-            const contentGrid = document.getElementById('contentGrid');
-            const recentContent = document.getElementById('recentContent');
-            
-            if (contentData.length === 0) {
-                contentGrid.innerHTML = `
-                    <div class="text-center text-gray-500 py-12 col-span-full">
-                        <i class="fas fa-folder-open text-6xl mb-4"></i>
-                        <p class="text-xl">لا يوجد محتوى بعد</p>
-                    </div>
-                `;
-                recentContent.innerHTML = `
-                    <div class="text-center text-gray-500 py-12">
-                        <i class="fas fa-cloud-upload-alt text-6xl mb-4"></i>
-                        <p class="text-xl">ابدأ برفع محتواك الأول!</p>
-                    </div>
-                `;
-                return;
-            }
-            
-            const contentHTML = contentData.map(item => createContentCard(item)).join('');
-            contentGrid.innerHTML = contentHTML;
-            
-            // Show recent content (last 6 items)
-            const recentItems = contentData.slice(-6).reverse();
-            const recentHTML = recentItems.map(item => createContentCard(item)).join('');
-            recentContent.innerHTML = recentHTML;
-        }
-
-        function createContentCard(item) {
-            const icon = getFileIcon(item.fileType);
-            const categoryColor = getCategoryColor(item.category);
-            
-            return `
-                <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover cursor-pointer" onclick="openContentModal('${item.id}')">
-                    <div class="p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <i class="${icon} text-3xl ${categoryColor}"></i>
-                            <span class="text-xs bg-gray-100 px-2 py-1 rounded">${item.category}</span>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 mb-2 truncate">${item.title}</h3>
-                        <p class="text-gray-600 text-sm mb-3 line-clamp-2">${item.description}</p>
-                        <div class="flex items-center justify-between text-xs text-gray-500">
-                            <span>${formatFileSize(item.fileSize)}</span>
-                            <span>${formatDate(item.uploadDate)}</span>
-                        </div>
-                        ${item.isPublic ? '<div class="mt-2"><span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded">عام</span></div>' : ''}
-                    </div>
-                </div>
-            `;
-        }
-
-        function filterContent() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const categoryFilter = document.getElementById('filterCategory').value;
-            const sortBy = document.getElementById('sortBy').value;
-            
-            let filteredData = contentData.filter(item => {
-                const matchesSearch = item.title.toLowerCase().includes(searchTerm) || 
-                                    item.description.toLowerCase().includes(searchTerm) ||
-                                    item.tags.some(tag => tag.toLowerCase().includes(searchTerm));
-                const matchesCategory = !categoryFilter || item.category === categoryFilter;
-                
-                return matchesSearch && matchesCategory;
-            });
-            
-            // Sort data
-            filteredData.sort((a, b) => {
-                switch (sortBy) {
-                    case 'newest':
-                        return new Date(b.uploadDate) - new Date(a.uploadDate);
-                    case 'oldest':
-                        return new Date(a.uploadDate) - new Date(b.uploadDate);
-                    case 'name':
-                        return a.title.localeCompare(b.title);
-                    case 'size':
-                        return b.fileSize - a.fileSize;
-                    default:
-                        return 0;
-                }
-            });
-            
-            // Render filtered content
-            const contentGrid = document.getElementById('contentGrid');
-            if (filteredData.length === 0) {
-                contentGrid.innerHTML = `
-                    <div class="text-center text-gray-500 py-12 col-span-full">
-                        <i class="fas fa-search text-6xl mb-4"></i>
-                        <p class="text-xl">لم يتم العثور على نتائج</p>
-                    </div>
-                `;
-            } else {
-                const contentHTML = filteredData.map(item => createContentCard(item)).join('');
-                contentGrid.innerHTML = contentHTML;
-            }
-        }
-
-        function openContentModal(contentId) {
-            const content = contentData.find(item => item.id == contentId);
-            if (!content) return;
-            
-            currentContent = content;
-            
-            document.getElementById('modalTitle').textContent = content.title;
-            document.getElementById('modalContent').innerHTML = `
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-4 space-x-reverse">
-                        <i class="${getFileIcon(content.fileType)} text-4xl ${getCategoryColor(content.category)}"></i>
-                        <div>
-                            <h4 class="text-lg font-semibold">${content.fileName}</h4>
-                            <p class="text-gray-600">${formatFileSize(content.fileSize)} • ${content.category}</p>
-                        </div>
-                    </div>
-                    <div>
-                        <h5 class="font-semibold mb-2">الوصف:</h5>
-                        <p class="text-gray-700">${content.description}</p>
-                    </div>
-                    ${content.tags.length > 0 ? `
-                        <div>
-                            <h5 class="font-semibold mb-2">الكلمات المفتاحية:</h5>
-                            <div class="flex flex-wrap gap-2">
-                                ${content.tags.map(tag => `<span class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm">${tag}</span>`).join('')}
-                            </div>
-                        </div>
-                    ` : ''}
-                    <div class="grid grid-cols-2 gap-4 text-sm">
-                        <div>
-                            <span class="font-semibold">تاريخ الرفع:</span>
-                            <p class="text-gray-600">${formatDate(content.uploadDate)}</p>
-                        </div>
-                        <div>
-                            <span class="font-semibold">الخصوصية:</span>
-                            <p class="text-gray-600">${content.isPublic ? 'عام' : 'خاص'}</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-            
-            document.getElementById('contentModal').classList.add('active');
-        }
-
-        function closeModal() {
-            document.getElementById('contentModal').classList.remove('active');
-            currentContent = null;
-        }
-
-        function shareContent() {
-            if (!currentContent) return;
-            
-            if (navigator.share) {
-                navigator.share({
-                    title: currentContent.title,
-                    text: currentContent.description,
-                    url: window.location.href
-                });
-            } else {
-                // Fallback: copy link to clipboard
-                navigator.clipboard.writeText(window.location.href).then(() => {
-                    alert('تم نسخ الرابط إلى الحافظة!');
-                });
-            }
-        }
-
-        function downloadContent() {
-            if (!currentContent) return;
-            
-            // In a real app, this would download the actual file
-            alert('تم بدء التحميل! (هذه نسخة تجريبية)');
-            addActivity(`تم تحميل: ${currentContent.title}`);
-        }
-
-        function deleteContent() {
-            if (!currentContent) return;
-            
-            if (confirm('هل أنت متأكد من حذف هذا المحتوى؟')) {
-                contentData = contentData.filter(item => item.id !== currentContent.id);
-                localStorage.setItem('contentData', JSON.stringify(contentData));
-                
-                updateStats();
-                renderContent();
-                addActivity(`تم حذف: ${currentContent.title}`);
-                closeModal();
-            }
-        }
-
-        function addActivity(message) {
-            const activityLog = document.getElementById('activityLog');
-            const activity = document.createElement('div');
-            activity.className = 'flex items-center space-x-3 space-x-reverse p-3 bg-gray-50 rounded';
-            activity.innerHTML = `
-                <i class="fas fa-clock text-gray-400"></i>
-                <div>
-                    <p class="text-sm">${message}</p>
-                    <p class="text-xs text-gray-500">${formatDate(new Date().toISOString())}</p>
-                </div>
-            `;
-            
-            if (activityLog.children.length === 1 && activityLog.children[0].textContent.includes('لا يوجد نشاط')) {
-                activityLog.innerHTML = '';
-            }
-            
-            activityLog.insertBefore(activity, activityLog.firstChild);
-            
-            // Keep only last 10 activities
-            while (activityLog.children.length > 10) {
-                activityLog.removeChild(activityLog.lastChild);
-            }
-        }
-
-        // Utility functions
-        function getFileIcon(fileType) {
-            if (fileType.startsWith('image/')) return 'fas fa-image';
-            if (fileType.startsWith('video/')) return 'fas fa-video';
-            if (fileType.startsWith('audio/')) return 'fas fa-music';
-            if (fileType.includes('pdf')) return 'fas fa-file-pdf';
-            if (fileType.includes('word') || fileType.includes('document')) return 'fas fa-file-word';
-            if (fileType.includes('excel') || fileType.includes('spreadsheet')) return 'fas fa-file-excel';
-            if (fileType.includes('powerpoint') || fileType.includes('presentation')) return 'fas fa-file-powerpoint';
-            return 'fas fa-file';
-        }
-
-        function getCategoryColor(category) {
-            const colors = {
-                video: 'text-blue-500',
-                image: 'text-green-500',
-                audio: 'text-purple-500',
-                document: 'text-orange-500',
-                other: 'text-gray-500'
-            };
-            return colors[category] || colors.other;
-        }
-
-        function formatFileSize(bytes) {
-            if (bytes === 0) return '0 Bytes';
-            const k = 1024;
-            const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-            const i = Math.floor(Math.log(bytes) / Math.log(k));
-            return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
-        }
-
-        function formatDate(dateString) {
-            const date = new Date(dateString);
-            return date.toLocaleDateString('ar-SA', {
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit'
-            });
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('contentModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-    </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9864b2e5e634705f',t:'MTc1OTA3Nzc5Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  </main>
+</body>
 </html>
