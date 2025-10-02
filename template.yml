@@ -1,0 +1,23 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  ai-proxy-service:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'AI Proxy for OpenRouter API'
+    ai-proxy-function:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: nodejs18
+        CodeUri: './'
+        MemorySize: 512
+        Timeout: 60
+        EnvironmentVariables:
+          OPENROUTER_API_KEY: ''
+      Events:
+        httpTrigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: ['POST', 'OPTIONS']
