@@ -1,12 +1,28 @@
-# AI Proxy for Alibaba Cloud Function Compute
+# Waleed Alkhulaqi – Personal Website
 
-## كيفية النشر
-1. افتح [Function Compute Console](https://fc.console.aliyun.com/)
-2. أنشئ خدمة باسم `ai-proxy-service`
-3. أنشئ دالة باسم `ai-proxy-function` باستخدام Runtime: Node.js 18
-4. ارفع هذا المجلد كـ ZIP
-5. في Environment Variables، أضف:
-   - Key: `OPENROUTER_API_KEY`
-   - Value: `ak_01k22rc3x1e148dcgbk3d3jaj3`
-6. أضف HTTP Trigger (POST, OPTIONS)
-7. استخدم الرابط في موقع React الخاص بك
+هذا مشروع موقع شخصي احترافي مبني باستخدام **React + Vite**  
+ومجهز للنشر مباشرة على **GitHub Pages** مع نطاق مخصص.
+
+---
+
+## 🚀 خطوات النشر على GitHub Pages
+
+1. ارفع المشروع إلى مستودع جديد على GitHub.
+2. تأكد أن الملفات التالية موجودة:
+   - `vite.config.js`
+   - `.github/workflows/deploy.yml`
+   - `public/CNAME`
+3. ادفع التغييرات (push) إلى الفرع `main`.
+4. من إعدادات المستودع في GitHub:
+   - ادخل إلى **Settings → Pages**
+   - اجعل النشر يتم من **GitHub Actions**.
+5. بعد أول push، الموقع سينشر تلقائيًا على نطاقك:
+   👉 https://waleedalkhulaqi.website
+
+---
+
+## 🛠️ أوامر التطوير محليًا
+
+- تثبيت الحزم:
+  ```bash
+  npm install
