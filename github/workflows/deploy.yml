@@ -1,23 +1,18 @@
-name: Deploy to GitHub Pages
+name: Deploy Vite React to GitHub Pages
 
 on:
   push:
-    branches: ["main"]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -27,10 +22,9 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: dist
-
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: waleedalkhulaqi.website
