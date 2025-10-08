@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>موقع وليد الخلاقي</title>
+<meta name="description" content="موقع شخصي احترافي لوليد الخلاقي، أدوات ذكاء اصطناعي، تطوير مواقع ويب، تعلم البرمجة بالعربية">
+<link rel="icon" href="favicon.png" type="image/png">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
+<script>
+if(location.protocol !== 'https:'){
+    location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+}
+document.addEventListener("DOMContentLoaded", function(){
+  const imgs = document.querySelectorAll('img');
+  imgs.forEach(img=>{
+    if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+    if(!img.width) img.width = img.naturalWidth || 600;
+    if(!img.height) img.height = img.naturalHeight || 400;
+  });
+});
+</script>
+</head>
+<body>
+<nav>
+  <ul>
+    <li><a href="/index.html">الرئيسية</a></li>
+    <li><a href="/ai-tools.html">أدوات AI</a></li>
+    <li><a href="/about.html">عن الموقع</a></li>
+    <li><a href="/contact.html">اتصل بنا</a></li>
+  </ul>
+</nav>
+<h1>مرحبا بك في موقع وليد الخلاقي</h1>
+<h2>أفضل الأدوات للاستخدام اليومي</h2>
+<p>وصف مختصر...</p>
+</body>
+</html>
