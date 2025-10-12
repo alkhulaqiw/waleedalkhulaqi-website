@@ -1,158 +1,70 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>وليد الخلاقي | الموقع الشخصي الرسمي</title>
-  <meta name="description" content="موقع شخصي احترافي لوليد الخلاقي — أدوات ذكاء اصطناعي مجانية، تعلم البرمجة، تطوير الويب، محتوى مرئي ومسموع.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://waleedalkhulaqi.website/">
+<!-- 🔒 الأمان -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:;">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
 
-  <!-- أيقونة الموقع -->
-  <link rel="icon" href="favicon.png" type="image/png">
+<!-- 🌐 Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-  <!-- بيانات Open Graph لتحسين العرض في محركات البحث ووسائل التواصل -->
-  <meta property="og:title" content="وليد الخلاقي | الموقع الشخصي">
-  <meta property="og:description" content="موقع شخصي متكامل لوليد الخلاقي — أدوات ذكاء اصطناعي، برمجة، وتسويق رقمي.">
-  <meta property="og:url" content="https://waleedalkhulaqi.website/">
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="ar_YE">
+<!-- 🔖 Canonical -->
+<link rel="canonical" href="https://alkhulaqiw.github.io/waleedalkhulaqi-website/index.html">
 
-  <!-- سياسة الأمان (CSP) المتوافقة مع فهرسة Google -->
-  <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: blob: https: http:; style-src 'self' 'unsafe-inline' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; img-src 'self' data: https:;">
+<!-- 📝 Title & Description -->
+<title>Waleed Alkhulaqi | الموقع الرسمي</title>
+<meta name="description" content="اكتشف مشاريع ومهارات وليد الخلاقي. استعرض الأعمال الاحترافية وتواصل معنا للتعاون.">
 
-  <!-- خريطة الموقع -->
-  <link rel="sitemap" type="application/xml" href="https://waleedalkhulaqi.website/sitemap.xml">
+<!-- 🌐 Open Graph -->
+<meta property="og:title" content="Waleed Alkhulaqi | الموقع الرسمي">
+<meta property="og:description" content="استعرض أحدث المشاريع والأعمال الإبداعية الخاصة بي.">
+<meta property="og:image" content="https://alkhulaqiw.github.io/waleedalkhulaqi-website/images/preview.jpg">
+<meta property="og:url" content="https://alkhulaqiw.github.io/waleedalkhulaqi-website/index.html">
+<meta property="og:type" content="website">
 
-  <!-- بيانات Schema لتعريف الموقع كشخص -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Waleed Alkhulaqi",
-    "url": "https://waleedalkhulaqi.website",
-    "description": "موقع شخصي احترافي لوليد الخلاقي في مجالات الذكاء الاصطناعي وتطوير الويب والتسويق الرقمي.",
-    "email": "info@waleedalkhulaqi.website",
-    "sameAs": [
-      "https://www.youtube.com/@waleedalkhulaqi",
-      "https://www.tiktok.com/@waleed.alkhulaqi",
-      "https://www.facebook.com/waleedalkhulaqi",
-      "https://www.instagram.com/waleedalkhulaqi"
-    ]
-  }
-  </script>
-
-  <!-- تحسين الصور البطيئة التحميل -->
-  <script>
-    if(location.protocol !== 'https:'){
-      location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
-    }
-    document.addEventListener("DOMContentLoaded", function(){
-      const imgs = document.querySelectorAll('img');
-      imgs.forEach(img=>{
-        if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
-        if(!img.width) img.width = img.naturalWidth || 600;
-        if(!img.height) img.height = img.naturalHeight || 400;
-      });
-    });
-  </script>
-
-  <style>
-    body {
-      font-family: "Tahoma", Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #222;
-      text-align: center;
-      line-height: 1.8;
-    }
-    nav {
-      background-color: #004aad;
-      padding: 10px 0;
-    }
-    nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    header, main, footer {
-      padding: 20px;
-    }
-    h1, h2 {
-      color: #004aad;
-    }
-    footer {
-      background-color: #eee;
-      padding: 20px;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #004aad;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<!-- 🐦 Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Waleed Alkhulaqi | الموقع الرسمي">
+<meta name="twitter:description" content="استعرض المشاريع، المهارات، وطرق التواصل.">
+<meta name="twitter:image" content="https://alkhulaqiw.github.io/waleedalkhulaqi-website/images/preview.jpg">
 </head>
-
 <body>
-  <nav>
-    <ul>
-      <li><a href="/index.html">الرئيسية</a></li>
-      <li><a href="/ai-tools.html">أدوات AI</a></li>
-      <li><a href="/about.html">عن الموقع</a></li>
-      <li><a href="/contact.html">اتصل بنا</a></li>
-    </ul>
-  </nav>
+<header>
+<h1>مرحبا بكم في موقع وليد الخلاقي</h1>
+<nav>
+<ul>
+<li><a href="/index.html">الرئيسية</a></li>
+<li><a href="/about.html">عنّي</a></li>
+<li><a href="/projects.html">مشاريعي</a></li>
+<li><a href="/contact.html">تواصل معنا</a></li>
+</ul>
+</nav>
+</header>
 
-  <header>
-    <h1>مرحباً بك في عالم وليد الخلاقي</h1>
-    <p>موقع شخصي متكامل يغطي المجالات المرئية، المسموعة، والمكتوبة — مع أدوات ذكاء اصطناعي مجانية.</p>
-  </header>
+<main>
+<section>
+<h2>من أنا</h2>
+<p>هذه فقرة تعريفية عن وليد الخلاقي ومساره المهني وخبراته في مجال العمل.</p>
+</section>
 
-  <main>
-    <section>
-      <h2>📝 مقالات ومدونة</h2>
-      <p>أفكار، تجارب، وشروحات في البرمجة، الذكاء الاصطناعي، والتسويق الرقمي.</p>
-      <a href="/blog.html">استكشف المقالات</a>
-    </section>
+<section>
+<h2>مشاريعي الأخيرة</h2>
+<p>استعرض أهم المشاريع التي تم تنفيذها مع روابط داخلية وخارجية مناسبة.</p>
+</section>
 
-    <section>
-      <h2>🤖 أدوات الذكاء الاصطناعي</h2>
-      <p>اكتب نصوصًا، ولّد صورًا، وحوّل الصوت إلى نص — كلها أدوات مجانية!</p>
-      <a href="/ai-tools.html">جرّب الأدوات الآن</a>
-    </section>
+<section>
+<h2>تواصل معنا</h2>
+<p>يمكنك إرسال رسالة عبر <a href="/contact.html">صفحة التواصل</a> أو البريد الإلكتروني: example@waleedalkhulaqi.website</p>
+</section>
+</main>
 
-    <section>
-      <h2>🎥 وسائط مرئية ومسموعة</h2>
-      <p>فيديوهات، بودكاست، وصور تعليمية من إنتاجي.</p>
-      <a href="/media.html">شاهد واستمع</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>جميع الحقوق محفوظة © 2025 | وليد الخلاقي - اليمن</p>
-    <p>📧 <a href="mailto:info@waleedalkhulaqi.website">info@waleedalkhulaqi.website</a></p>
-    <p>
-      <a href="https://www.youtube.com/@waleedalkhulaqi">YouTube</a> |
-      <a href="https://www.tiktok.com/@waleed.alkhulaqi">TikTok</a> |
-      <a href="https://www.facebook.com/waleedalkhulaqi">Facebook</a> |
-      <a href="https://www.instagram.com/waleedalkhulaqi">Instagram</a>
-    </p>
-  </footer>
+<footer>
+<p>&copy; 2025 Waleed Alkhulaqi. جميع الحقوق محفوظة.</p>
+</footer>
 </body>
 </html>
