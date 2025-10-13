@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تحويل الصوت إلى نص مجانًا — أدوات الذكاء الاصطناعي</title>
+  <meta name="description" content="حوّل الصوت إلى نص بدقة عالية — مجانًا وبدون تسجيل! ارفع ملف صوتي أو سجّل مباشرة واحصل على نص عربي فوري." />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="تحويل الصوت إلى نص مجانًا — أدوات الذكاء الاصطناعي" />
+  <meta property="og:description" content="حوّل الصوت إلى نص بدقة عالية — مجانًا وبدون تسجيل!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://waleedalkhulaqi.website/speech-to-text" />
+  <meta property="og:image" content="https://waleedalkhulaqi.website/og-stt.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Tailwind CDN (كما في موقعك) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      direction: 'rtl',
+      corePlugins: { preflight: false }
+    };
+  </script>
+  <style>body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }</style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-white to-slate-50 text-right" dir="rtl">
+  <!-- التنقل (Nav) -->
+  <header class="w-full bg-white/80 backdrop-blur sticky top-0 z-40 border-b">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="rounded-full bg-gradient-to-r from-sky-500 to-violet-600 w-11 h-11 flex items-center justify-center text-white font-bold">WA</div>
+        <div>
+          <div class="font-semibold">وائل الخلاقي</div>
+          <div class="text-sm text-slate-600">waleedalkhulaqi.website</div>
+        </div>
+      </div>
+      <nav class="flex items-center gap-3">
+        <a href="/" class="py-2 px-3 rounded-md hover:bg-slate-100">الرئيسية</a>
+        <a href="/speech-to-text" class="py-2 px-3 rounded-md bg-slate-100 font-semibold">تحويل الصوت إلى نص</a>
+        <a href="/contact" class="py-2 px-3 rounded-md hover:bg-slate-100">تواصل</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- المحتوى الرئيسي -->
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <h1 class="text-3xl md:text-4xl font-extrabold mb-4">حوّل الصوت إلى نص بدقة عالية — مجانًا وبدون تسجيل!</h1>
+    <p class="text-lg text-slate-700 mb-6">
+      هل سئمت من كتابة المقابلات، المحاضرات، أو الاجتماعات يدويًا؟  
+      مع أداة التحويل من صوت إلى نص لدينا، يمكنك رفع ملف صوتي أو التسجيل المباشر وتحويله إلى نص عربي دقيق خلال ثوانٍ — بدون الحاجة إلى تسجيل حساب أو دفع أي رسوم.
+    </p>
+
+    <!-- أداة STT -->
+    <section class="bg-white p-6 rounded-xl border shadow-sm mb-10">
+      <h2 class="text-2xl font-bold mb-4">ابدأ الآن — بدون تسجيل!</h2>
+      <div class="flex flex-col gap-4">
+        <div class="flex gap-2 flex-wrap">
+          <button onclick="startSTT()" class="px-4 py-2 bg-emerald-600 text-white rounded-md hover:bg-emerald-700">
+            ابدأ التسجيل
+          </button>
+          <button onclick="stopRecording()" class="px-4 py-2 border rounded-md hover:bg-slate-100">
+            إيقاف
+          </button>
+          <button onclick="speakText(sttText)" class="px-4 py-2 border rounded-md hover:bg-slate-100">
+            نطق النص
+          </button>
+        </div>
+        <textarea
+          id="stt-output"
+          readonly
+          placeholder="سيظهر النص هنا تلقائيًا أثناء التحدث..."
+          class="w-full p-3 border rounded-md text-right h-32 resize-none"
+        ></textarea>
+        <button
+          onclick="copyToClipboard()"
+          class="self-start px-4 py-2 bg-sky-600 text-white rounded-md hover:bg-sky-700"
+        >
+          نسخ النص
+        </button>
+      </div>
+    </section>
+
+    <!-- الميزات -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold mb-4">لماذا تختار أداة تحويل الصوت إلى نص لدينا؟</h2>
+      <ul class="space-y-2 text-slate-700">
+        <li>✔️ <strong>دقة عالية</strong> في التعرّف على الكلام العربي</li>
+        <li>✔️ <strong>بدون تسجيل</strong> — ابدأ فورًا دون إدخال بريدك</li>
+        <li>✔️ <strong>يدعم التسجيل المباشر</strong> من الميكروفون</li>
+        <li>✔️ <strong>نسخ ولصق فوري</strong> — لا حاجة لتنزيل ملفات</li>
+        <li>✔️ <strong>مجاني 100%</strong> — لا اشتراكات، لا بطاقات ائتمان</li>
+      </ul>
+    </section>
+
+    <!-- الأسئلة الشائعة -->
+    <section>
+      <h2 class="text-2xl font-bold mb-4">الأسئلة الشائعة</h2>
+      <div class="space-y-4">
+        <div>
+          <h3 class="font-semibold">هل الأداة مجانية حقًا؟</h3>
+          <p class="text-slate-700">نعم! لا نطلب منك أي معلومات شخصية أو دفعات. كل شيء يعمل مباشرة في متصفحك.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold">هل يتم حفظ ملفاتي؟</h3>
+          <p class="text-slate-700">لا. نحترم خصوصيتك: لا نخزن أي صوت أو نص بعد انتهاء الجلسة.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer بسيط -->
+  <footer class="mt-16 py-6 text-center text-slate-600 text-sm">
+    <p>© 2025 وائل الخلاقي. جميع الحقوق محفوظة.</p>
+  </footer>
+
+  <!-- JavaScript للوظائف -->
+  <script>
+    let recognition;
+    let sttText = "";
+    const output = document.getElementById("stt-output");
+
+    // تهيئة SpeechRecognition
+    function initRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        alert("ميزة تحويل الصوت إلى نص غير مدعومة في متصفحك.");
+        return null;
+      }
+      recognition = new SpeechRecognition();
+      recognition.lang = "ar-YE";
+      recognition.interimResults = true;
+      recognition.continuous = false;
+
+      recognition.onresult = (event) => {
+        sttText = Array.from(event.results)
+          .map(result => result[0].transcript)
+          .join("");
+        output.value = sttText;
+      };
+
+      recognition.onend = () => {
+        console.log("انتهى التسجيل");
+      };
+    }
+
+    function startSTT() {
+      if (!recognition) initRecognition();
+      if (!recognition) return;
+      sttText = "";
+      output.value = "";
+      recognition.start();
+    }
+
+    function stopRecording() {
+      if (recognition) recognition.stop();
+    }
+
+    function speakText(text) {
+      if (!text.trim()) return;
+      if (!window.speechSynthesis) {
+        alert("ميزة النطق غير مدعومة في متصفحك.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = "ar-SA";
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function copyToClipboard() {
+      if (!sttText.trim()) return;
+      navigator.clipboard.writeText(sttText).then(() => {
+        alert("تم نسخ النص!");
+      });
+    }
+  </script>
+</body>
+</html>
