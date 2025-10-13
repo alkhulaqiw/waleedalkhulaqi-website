@@ -3,18 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>تحويل الصوت إلى نص مجانًا — أدوات الذكاء الاصطناعي</title>
-  <meta name="description" content="حوّل الصوت إلى نص بدقة عالية — مجانًا وبدون تسجيل! ارفع ملف صوتي أو سجّل مباشرة واحصل على نص عربي فوري." />
+  
+  <!-- Primary Meta Tags -->
+  <title>تحويل الصوت إلى نص مجانًا — بدون تسجيل | وائل الخلاقي</title>
+  <meta name="description" content="حوّل الصوت إلى نص عربي بدقة عالية خلال ثوانٍ! أداة مجانية تعمل مباشرة في المتصفح — بدون تسجيل أو دفع." />
 
-  <!-- Open Graph / Social Meta -->
-  <meta property="og:title" content="تحويل الصوت إلى نص مجانًا — أدوات الذكاء الاصطناعي" />
-  <meta property="og:description" content="حوّل الصوت إلى نص بدقة عالية — مجانًا وبدون تسجيل!" />
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://waleedalkhulaqi.website/speech-to-text" />
-  <meta property="og:image" content="https://waleedalkhulaqi.website/og-stt.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://waleedalkhulaqi.website/speech-to-text.html" />
+  <meta property="og:title" content="تحويل الصوت إلى نص مجانًا — بدون تسجيل" />
+  <meta property="og:description" content="حوّل الصوت إلى نص عربي بدقة عالية خلال ثوانٍ! أداة مجانية تعمل مباشرة في المتصفح — بدون تسجيل أو دفع." />
+  <meta property="og:image" content="https://waleedalkhulaqi.website/og/speech-to-text-og.jpg" />
+  <meta property="og:image:alt" content="أداة تحويل الصوت إلى نص بالذكاء الاصطناعي" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:site_name" content="وائل الخلاقي - أدوات الذكاء الاصطناعي" />
 
-  <!-- Tailwind CDN (كما في موقعك) -->
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="تحويل الصوت إلى نص مجانًا — بدون تسجيل" />
+  <meta name="twitter:description" content="حوّل الصوت إلى نص عربي بدقة عالية خلال ثوانٍ! أداة مجانية تعمل مباشرة في المتصفح." />
+  <meta name="twitter:image" content="https://waleedalkhulaqi.website/og/speech-to-text-og.jpg" />
+  <meta name="twitter:image:alt" content="أداة تحويل الصوت إلى نص بالذكاء الاصطناعي" />
+
+  <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -37,8 +48,8 @@
       </div>
       <nav class="flex items-center gap-3">
         <a href="/" class="py-2 px-3 rounded-md hover:bg-slate-100">الرئيسية</a>
-        <a href="/speech-to-text" class="py-2 px-3 rounded-md bg-slate-100 font-semibold">تحويل الصوت إلى نص</a>
-        <a href="/contact" class="py-2 px-3 rounded-md hover:bg-slate-100">تواصل</a>
+        <a href="/speech-to-text.html" class="py-2 px-3 rounded-md bg-slate-100 font-semibold">تحويل الصوت إلى نص</a>
+        <a href="/contact.html" class="py-2 px-3 rounded-md hover:bg-slate-100">تواصل</a>
       </nav>
     </div>
   </header>
@@ -120,7 +131,6 @@
     let sttText = "";
     const output = document.getElementById("stt-output");
 
-    // تهيئة SpeechRecognition
     function initRecognition() {
       const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
       if (!SpeechRecognition) {
