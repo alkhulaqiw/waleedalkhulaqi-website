@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+Disallow: /admin/
+
+Sitemap: https://waleedalkhulaqi.website/sitemap.xml
