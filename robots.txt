@@ -1,9 +1,8 @@
 User-agent: *
 Allow: /
 
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /private/
-Disallow: /admin/
-
 Sitemap: https://waleedalkhulaqi.website/sitemap.xml
+
+# Disallow crawling of non-content files
+Disallow: /README.md
+Disallow: /.git/
