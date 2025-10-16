@@ -23,33 +23,74 @@
 
   <style>
     body {
-      font-family: system-ui, Tahoma, sans-serif;
-      line-height: 1.6;
+      font-family: Tahoma, Arial, sans-serif;
+      line-height: 1.7;
       margin: 0;
       padding: 0;
+      background: #fff;
+      color: #333;
+    }
+    header nav ul {
+      list-style: none;
+      padding: 15px 20px;
+      margin: 0;
+      background: #f8f9fa;
+      text-align: center;
+    }
+    header nav ul li {
+      display: inline-block;
+      margin: 0 10px;
+    }
+    header nav ul li a {
+      text-decoration: none;
+      color: #007BFF;
+      font-weight: bold;
     }
     main {
-      padding: 40px 20px;
       max-width: 800px;
-      margin: 0 auto;
+      margin: 30px auto;
+      padding: 0 20px;
     }
-    .ai-agent-container {
-      margin-top: 40px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #222;
     }
-    .ai-agent-container iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
+    .tool-section {
+      margin-bottom: 30px;
+    }
+    .tool-section h2 {
+      margin-bottom: 12px;
+      color: #007BFF;
+    }
+    .tool-section ul {
+      padding-right: 20px;
+    }
+    .tool-section li {
+      margin-bottom: 8px;
+    }
+    .ai-agent-btn {
       display: block;
+      width: fit-content;
+      margin: 30px auto 20px;
+      padding: 14px 28px;
+      background: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s;
     }
-    @media (max-width: 600px) {
-      .ai-agent-container iframe {
-        height: 500px;
-      }
+    .ai-agent-btn:hover {
+      background: #0056b3;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #666;
+      border-top: 1px solid #eee;
+      margin-top: 40px;
     }
   </style>
 </head>
@@ -66,30 +107,42 @@
   </header>
 
   <main>
-    <h1>أدوات الذكاء الاصطناعي</h1>
-    <p>مرحبًا بك في مكتبة الأدوات الذكية! إليك الأدوات المتاحة حاليًا:</p>
+    <h1>أدوات الذكاء الاصطناعي المجانية</h1>
 
-    <ul>
-      <li><strong>كاتب الذكاء الاصطناعي</strong>: اكتب مقالات، منشورات، رسائل احترافية في ثوانٍ.</li>
-      <li><strong>مُولّد الصور</strong>: أنشئ صورًا فنية من وصف نصي بجودة عالية.</li>
-      <li><strong>محوّل الصوت إلى نص</strong>: حوّل تسجيلاتك الصوتية إلى نص دقيق بلغتك.</li>
-    </ul>
-
-    <p>جميع الأدوات مجانية وسهلة الاستخدام. سيتم إطلاقها تدريجيًا خلال الأسابيع القادمة.</p>
-
-    <h2>جرب وكيل الذكاء الاصطناعي الخاص بي الآن</h2>
-    <div class="ai-agent-container">
-      <iframe 
-        src="https://myaiagent12.web.dappier.com/askai/wd_01k63ndmaefqdtjvdrp9rktqwb"
-        title="وكيل الذكاء الاصطناعي - وليد الخلاقي"
-        loading="lazy"
-        referrerpolicy="no-referrer"
-        sandbox="allow-scripts allow-same-origin allow-popups allow-forms">
-      </iframe>
+    <div class="tool-section">
+      <h2>✍️ كتابة نصوص</h2>
+      <ul>
+        <li><a href="https://chatgpt.com" target="_blank" rel="noopener">ChatGPT (مجاني)</a></li>
+        <li><a href="https://gemini.google.com" target="_blank" rel="noopener">Google Gemini</a></li>
+      </ul>
     </div>
 
-    <p style="margin-top: 20px;">
-      لمزيد من التحديثات، تابع <a href="about.html">صفحة من أنا</a> أو <a href="contact.html">تواصل معي</a>.
+    <div class="tool-section">
+      <h2>🖼️ توليد صور</h2>
+      <ul>
+        <li><a href="https://www.bing.com/images/create" target="_blank" rel="noopener">Microsoft Bing Image Creator</a></li>
+        <li><a href="https://deepai.org" target="_blank" rel="noopener">DeepAI</a></li>
+      </ul>
+    </div>
+
+    <div class="tool-section">
+      <h2>🎙️ تحويل صوت ↔ نص</h2>
+      <ul>
+        <li><a href="https://otter.ai" target="_blank" rel="noopener">Otter.ai</a></li>
+        <li><a href="https://www.naturalreaders.com/online/" target="_blank" rel="noopener">NaturalReader</a></li>
+      </ul>
+    </div>
+
+    <!-- رابط مباشر لوكيل الذكاء الاصطناعي الخاص بك -->
+    <a href="https://myaiagent12.web.dappier.com/askai/wd_01k63ndmaefqdtjvdrp9rktqwb" 
+       target="_blank" 
+       rel="noopener" 
+       class="ai-agent-btn">
+      💬 دردش معي عبر الذكاء الاصطناعي
+    </a>
+
+    <p style="text-align: center;">
+      <a href="index.html" style="color: #007BFF; text-decoration: none;">العودة للرئيسية</a>
     </p>
   </main>
 
