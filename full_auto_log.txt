@@ -1,0 +1,4 @@
+--------------------------------------
+📅 Sat Oct 11 18:41:56 +03 2025
+/data/data/com.termux/files/home/waleedalkhulaqi-website/termux_auto_deploy.sh: line 42: /data/data/com.termux/files/home/ossutilarm64: No such file or directory
+❌ فشل رفع الملفات!
