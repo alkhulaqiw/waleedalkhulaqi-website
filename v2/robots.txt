@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://waleedalkhulaqi.website/v2/sitemap.xml
