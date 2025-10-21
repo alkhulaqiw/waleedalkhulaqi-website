@@ -49,6 +49,44 @@
   }
   </script>
 
+  <!-- 📘 Website Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Waleed Alkhulaqi Website",
+    "alternateName": "موقع وليد الخلاقي",
+    "url": "https://waleedalkhulaqi.website/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://waleedalkhulaqi.website/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- 🧭 BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "الرئيسية",
+        "item": "https://waleedalkhulaqi.website/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "المدونة",
+        "item": "https://waleedalkhulaqi.website/blog.html"
+      }
+    ]
+  }
+  </script>
+
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
