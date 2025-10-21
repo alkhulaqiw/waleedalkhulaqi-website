@@ -1,277 +1,127 @@
 <!doctype html>
-
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="وليد الخلاقي — موقع شخصي احترافي. مقالات، وسائط، أدوات ذكاء اصطناعي مجانية، وخدمات." />
-  <meta name="author" content="Waleed alkhulaqi">
-  <title>وليد الخلاقي — موقع شخصي احترافي</title>
-  <link rel="icon" href="/favicon.ico">
-  <meta name="theme-color" content="#07132a" />
-  <style>
-    /* تصميم حديث - ثيم غامق بأزرق رمادي */
-    :root{--bg:#07132a;--card:#0d2338;--accent:#0b6efd;--muted:#9aa7b2;--glass:rgba(255,255,255,0.04)}
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{font-family: 'Noto Kufi Arabic', Tahoma, Arial, sans-serif;margin:0;background:linear-gradient(180deg,var(--bg),#041025);color:#e6eef8;-webkit-font-smoothing:antialiased}
-    .container{max-width:1100px;margin:0 auto;padding:20px}
-    header{backdrop-filter:blur(6px);background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-bottom:1px solid rgba(255,255,255,0.03)}
-    .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#6c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:18px}
-    nav ul{display:flex;gap:14px;list-style:none;padding:0;margin:0}
-    nav a{text-decoration:none;color:#cfe7ff;font-weight:600}
-    .hero{display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;padding:36px 0}
-    .hero h1{font-size:30px;margin:0 0 12px}
-    .hero p{margin:0 0 18px;color:var(--muted);line-height:1.6}
-    .cta{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none;font-weight:700}
-    .soft{background:var(--card);border-radius:12px;padding:14px;border:1px solid rgba(255,255,255,0.03)}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-    .card{background:var(--glass);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    section{padding:28px 0}
-    .about{display:flex;gap:18px;align-items:center}
-    .avatar{width:160px;height:160px;border-radius:12px;background:linear-gradient(135deg,#0b6efd,#7c3aed);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800}
-    .blog-list{display:grid;gap:12px}
-    .post{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.02)}
-    .post img{width:84px;height:64px;object-fit:cover;border-radius:8px}
-    .media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-    footer{border-top:1px solid rgba(255,255,255,0.02);padding:20px 0;color:var(--muted)}
-    .actions{display:flex;gap:10px;flex-wrap:wrap}
-    .ai-tool{display:block;padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(11,110,253,0.08), rgba(124,58,237,0.06));border:1px solid rgba(255,255,255,0.02);text-decoration:none;color:#eaf3ff;font-weight:700}
-    @media (max-width:900px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.media-grid{grid-template-columns:repeat(2,1fr)}}
-    @media (max-width:600px){.cards{grid-template-columns:1fr}.media-grid{grid-template-columns:1fr}}
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>وليد الخلاقي — موقع شخصي احترافي في البرمجة والذكاء الاصطناعي</title>
+
+  <!-- 🔍 تحسين SEO -->
+  <meta name="description" content="الموقع الشخصي لوليد الخلاقي — مطوّر ومبدع محتوى رقمي يقدم مقالات وأدوات ذكاء اصطناعي مجانية في البرمجة، التقنية، والتصميم." />
+  <meta name="keywords" content="وليد الخلاقي, waleed alkhulaqi, الذكاء الاصطناعي, برمجة, تصميم, موقع شخصي, أدوات الذكاء, توليد الصور, تحويل الصوت إلى نص" />
+  <meta name="author" content="Waleed Alkhulaqi" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://waleedalkhulaqi.website/" />
+
+  <!-- 🌐 Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://waleedalkhulaqi.website/" />
+  <meta property="og:title" content="وليد الخلاقي — موقع شخصي احترافي" />
+  <meta property="og:description" content="موقع شخصي يجمع المرئي، المسموع، والمكتوب مع أدوات ذكاء اصطناعي مجانية." />
+  <meta property="og:image" content="https://waleedalkhulaqi.website/logo.png" />
+  <meta property="og:locale" content="ar_AR" />
+  <meta property="og:site_name" content="Waleed Alkhulaqi Website" />
+
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="وليد الخلاقي — موقع شخصي احترافي" />
+  <meta name="twitter:description" content="مقالات وأدوات ذكاء اصطناعي مجانية في البرمجة والتقنية." />
+  <meta name="twitter:image" content="https://waleedalkhulaqi.website/logo.png" />
+
+  <!-- 📊 Structured Data (Google JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Waleed Alkhulaqi",
+    "alternateName": "وليد الخلاقي",
+    "url": "https://waleedalkhulaqi.website/",
+    "image": "https://waleedalkhulaqi.website/logo.png",
+    "description": "مطوّر ومبدع محتوى رقمي في مجالات البرمجة والذكاء الاصطناعي.",
+    "jobTitle": "مطور ويب ومبدع محتوى",
+    "nationality": "Yemen",
+    "email": "info@waleedalkhulaqi.website",
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.instagram.com/",
+      "https://www.youtube.com/",
+      "https://x.com/"
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <div class="container topbar">
-      <div class="brand">
-        <div class="logo">WA</div>
-        <div>
-          <div style="font-weight:800">وليد الخلاقي</div>
-          <div style="font-size:13px;color:var(--muted)">موقع شخصي احترافي • مرئي، مسموع، ومكتوب</div>
-        </div>
+
+<body class="bg-slate-50 text-slate-900 font-sans">
+  <header class="bg-white shadow">
+    <div class="max-w-5xl mx-auto p-6 flex items-center justify-between">
+      <div>
+        <img src="logo.svg" alt="شعار وليد الخلاقي" style="height:64px;display:block;margin-bottom:6px;"/>
+        <h1 class="text-2xl font-bold">وليد الخلاقي</h1>
+        <p class="text-sm text-slate-500">موقع شخصي احترافي — المرئي، المسموع، والمكتوب</p>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#home">الرئيسية</a></li>
-          <li><a href="#about">من أنا</a></li>
-          <li><a href="#blog">المقالات</a></li>
-          <li><a href="#media">وسائط</a></li>
-          <li><a href="#ai">أدوات AI</a></li>
-          <li><a href="#services">الخدمات</a></li>
-          <li><a href="#contact">تواصل</a></li>
-        </ul>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-slate-700">الرئيسية</a>
+        <a href="about.html" class="text-slate-700">من أنا</a>
+        <a href="blog.html" class="text-slate-700">المدونة</a>
+        <a href="media.html" class="text-slate-700">الوسائط</a>
+        <a href="ai-tools.html" class="text-slate-700">أدوات الذكاء</a>
+        <a href="contact.html" class="text-slate-700">اتصل بي</a>
       </nav>
     </div>
-  </header>  <main class="container">
-    <section id="home" class="hero">
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6">
+    <section class="bg-white rounded-2xl p-6 mb-6 shadow">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="https://picsum.photos/seed/waleed/240/240" alt="وليد الخلاقي" class="rounded-full w-48 h-48 object-cover" />
+        <div>
+          <h2 class="text-2xl font-semibold">مرحبًا — أنا وليد الخلاقي</h2>
+          <p class="mt-2 text-slate-600">
+            مطوّر ومبدع محتوى رقمي. هذا الموقع يجمع أعمالي، مقالاتي، وأدوات ذكاء اصطناعي مجانية تساعدك على توليد المحتوى، توليد الصور، والتحويل بين الصوت والنص.
+          </p>
+          <div class="mt-4 flex gap-3">
+            <a href="ai-tools.html" class="px-4 py-2 bg-slate-900 text-white rounded hover:bg-slate-800">جرّب أدواتي</a>
+            <a href="contact.html" class="px-4 py-2 border rounded hover:bg-slate-100">تواصل معي</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <article class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+        <h3 class="font-semibold">المقالات</h3>
+        <p class="text-sm text-slate-500 mt-2">مقالات في الذكاء الاصطناعي والتقنية والإعلام.</p>
+        <a href="blog.html" class="mt-3 inline-block text-sm text-blue-600">عرض المقالات →</a>
+      </article>
+
+      <article class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+        <h3 class="font-semibold">الوسائط</h3>
+        <p class="text-sm text-slate-500 mt-2">مكتبة الفيديوهات والصوتيات والصور.</p>
+        <a href="media.html" class="mt-3 inline-block text-sm text-blue-600">عرض الوسائط →</a>
+      </article>
+
+      <article class="bg-white p-4 rounded shadow hover:shadow-lg transition">
+        <h3 class="font-semibold">الأدوات الذكية</h3>
+        <p class="text-sm text-slate-500 mt-2">مولد نصوص، توليد صور، تحويل صوت ↔ نص.</p>
+        <a href="ai-tools.html" class="mt-3 inline-block text-sm text-blue-600">جرّب الأدوات →</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="bg-white mt-8 border-t">
+    <div class="max-w-5xl mx-auto p-6 flex flex-col md:flex-row justify-between items-center text-sm">
       <div>
-        <h1>مرحباً بك في عالم وليد الخلاقي</h1>
-        <p>الموقع الشخصي الذي يجمع بين المرئي والمسموع والمكتوب — مقالات، مشاريع، وأدوات ذكاء اصطناعي مجانية تساعدك على الإنتاج السريع.</p>
-        <div class="actions">
-          <a class="cta" href="#blog">اقرأ المدونة</a>
-          <a class="cta" href="#ai" style="background:#1d8bff">جرب أدوات AI</a>
-        </div><div class="cards" style="margin-top:20px">
-      <div class="card soft">
-        <h3>المقالات</h3>
-        <p class="muted">آخر المقالات مباشرة من مدونتي على WordPress.</p>
-        <div id="latest-posts-placeholder" style="margin-top:10px"></div>
+        <p class="font-semibold">Waleed Alkhulaqi</p>
+        <p class="text-slate-500">info@waleedalkhulaqi.website • +967736903668 • اليمن</p>
       </div>
-      <div class="card soft">
-        <h3>مشاريعي</h3>
-        <p class="muted">روابط لمستودعات GitHub وأمثلة عملية.</p>
-      </div>
-      <div class="card soft">
-        <h3>خدمات</h3>
-        <p class="muted">تصميم مواقع، استشارات تقنية، وتدريبات.</p>
+      <div class="mt-3 md:mt-0">
+        <a href="#" class="px-3">يوتيوب</a>
+        <a href="#" class="px-3">فيسبوك</a>
+        <a href="#" class="px-3">إنستغرام</a>
       </div>
     </div>
-  </div>
-
-  <aside class="soft" style="padding:18px;border-radius:12px">
-    <div style="font-weight:800;margin-bottom:8px">اتصل بي</div>
-    <div style="font-size:14px;color:var(--muted)">Waleed alkhulaqi</div>
-    <div style="margin-top:8px">📧 <a href="mailto:info@waleedalkhulaqi.website">info@waleedalkhulaqi.website</a></div>
-    <div>📞 <a href="tel:+967736903668">+967 73 690 3668</a></div>
-    <div style="margin-top:12px"><a href="#contact" class="cta">راسلني الآن</a></div>
-  </aside>
-</section>
-
-<section id="about">
-  <div class="about">
-    <div class="avatar" aria-hidden="true">وليد</div>
-    <div>
-      <h2>من أنا</h2>
-      <p>اسمي وليد الخلاقي — مطوّر ومُبدع محتوى من اليمن. أدمج التقنيات الحديثة لبناء تجارب رقمية، وأنشر مقالات ومشاريع عملية للمتابعين.</p>
-      <p style="color:var(--muted)">خبرات: تطوير واجهات، أنظمة خلفية، ونشر مشاريع مفتوحة المصدر.</p>
-    </div>
-  </div>
-</section>
-
-<section id="blog">
-  <h2>المقالات من مدونتي</h2>
-  <div id="posts" class="blog-list">
-    <div class="post">جاري تحميل المقالات...</div>
-  </div>
-  <div style="margin-top:10px"><a href="https://alkhulaqiw.wordpress.com" class="ai-tool" target="_blank" rel="noopener">زيارة المدونة الكاملة على WordPress</a></div>
-</section>
-
-<section id="media">
-  <h2>وسائط</h2>
-  <div class="media-grid">
-    <div class="card soft">قريبًا: معرض الصور والفيديو</div>
-    <div class="card soft">قريبًا: حلقات بودكاست</div>
-    <div class="card soft">قريبًا: ملفات صوتية</div>
-  </div>
-</section>
-
-<section id="ai">
-  <h2>أدوات الذكاء الاصطناعي المجانية (تجريبي)</h2>
-  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
-    <a class="ai-tool" href="/ai/text-generator.html">✍️ مولد نصوص</a>
-    <a class="ai-tool" href="/ai/image-generator.html">🎨 توليد صور</a>
-    <a class="ai-tool" href="/ai/speech-to-text.html">🔊 تحويل صوت إلى نص</a>
-    <a class="ai-tool" href="/ai/podcast.html">🎙️ إدارة بودكاست</a>
-  </div>
-</section>
-
-<section id="services">
-  <h2>خدماتي</h2>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
-    <div class="card soft"><h4>تصميم وتطوير مواقع</h4><p class="muted">مواقع متجاوبة وسريعة.</p></div>
-    <div class="card soft"><h4>استشارات تقنية</h4><p class="muted">تحليل وتخطيط أنظمة.</p></div>
-    <div class="card soft"><h4>تدريبات</h4><p class="muted">دورات وورش عمل مخصصة.</p></div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>تواصل معي</h2>
-  <form id="contact-form" style="max-width:700px">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-      <input name="name" placeholder="الاسم" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#eaf3ff">
-      <input name="email" placeholder="البريد الإلكتروني" type="email" required style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#eaf3ff">
-    </div>
-    <textarea name="message" placeholder="رسالتك" required style="width:100%;padding:10px;margin-top:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:#eaf3ff"></textarea>
-    <div style="margin-top:10px"><button id="send-btn" type="button" class="cta">أرسل الرسالة</button></div>
-  </form>
-  <div id="form-msg" style="margin-top:12px;color:var(--muted)"></div>
-
-  <div style="margin-top:18px;color:var(--muted)">
-    <div>📧 info@waleedalkhulaqi.website</div>
-    <div>📞 +967 73 690 3668</div>
-    <div>📍 اليمن</div>
-  </div>
-</section>
-
-  </main>  <footer>
-    <div class="container">
-      <div style="display:flex;justify-content:space-between;align-items:center">
-        <div>© <strong>وليد الخلاقي</strong> — جميع الحقوق محفوظة</div>
-        <div style="color:var(--muted)">روابط: <a href="https://www.youtube.com" target="_blank">YouTube</a> • <a href="https://www.facebook.com" target="_blank">Facebook</a> • <a href="https://www.instagram.com" target="_blank">Instagram</a></div>
-      </div>
-    </div>
-  </footer>  <script>
-    // جلب آخر المقالات من RSS الخاص بالوردبريس
-    async function fetchPosts(){
-      try{
-        const rssURL = 'https://alkhulaqiw.wordpress.com/feed';
-        const res = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(rssURL));
-        // استخدام proxy (allorigins) لتجاوز قيود CORS على GitHub Pages
-        const text = await res.text();
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(text, 'text/xml');
-        const items = Array.from(xml.querySelectorAll('item')).slice(0,3);
-        const container = document.getElementById('posts');
-        container.innerHTML = '';
-        items.forEach(item =>{
-          const title = item.querySelector('title')?.textContent || 'بدون عنوان';
-          const link = item.querySelector('link')?.textContent || '#';
-          const desc = item.querySelector('description')?.textContent || '';
-          // حاول استخراج صورة مميزة
-          let img = '';
-          const media = item.getElementsByTagName('media:content')[0] || item.getElementsByTagName('enclosure')[0];
-          if(media && media.getAttribute){ img = media.getAttribute('url') }
-          const el = document.createElement('article');
-          el.className = 'post';
-          el.innerHTML = `
-            <a href="${link}" target="_blank" rel="noopener"><img src="${img || 'https://via.placeholder.com/320x240?text=WA'}" alt=""></a>
-            <div>
-              <a href="${link}" target="_blank" rel="noopener" style="font-weight:800;color:#eaf3ff;text-decoration:none">${title}</a>
-              <div style="color:var(--muted);margin-top:6px;max-width:600px">${desc.replace(/(<([^>]+)>)/ig,'').slice(0,180)}...</div>
-            </div>`;
-          container.appendChild(el);
-        });
-      }catch(e){
-        console.error(e);
-        document.getElementById('posts').innerHTML = '<div style="color:var(--muted)">فشل تحميل المقالات — تأكد من أن مدونتك عامة وأن RSS يعمل.</div>';
-      }
-    }
-    fetchPosts();
-
-    // نموذج الاتصال — إرسال عبر خدمة بريد خارجية (سنقترح Zapier / Formspree)
-    document.getElementById('send-btn').addEventListener('click', async ()=>{
-      const form = document.getElementById('contact-form');
-      const data = new FormData(form);
-      document.getElementById('send-btn').disabled = true;
-      document.getElementById('form-msg').textContent = 'جاري إرسال الرسالة...';
-      try{
-        // هنا نستخدم Formspree (كمثال) — استبدل URL بنهاية Formspree أو Zapier الخاصة بك
-        const endpoint = 'https://formspree.io/f/your_form_id';
-        const res = await fetch(endpoint, {method:'POST',body:data});
-        if(res.ok){ document.getElementById('form-msg').textContent = 'تم إرسال رسالتك بنجاح.'; form.reset(); }
-        else{ document.getElementById('form-msg').textContent = 'حدث خطأ أثناء الإرسال.' }
-      }catch(err){
-        console.error(err); document.getElementById('form-msg').textContent = 'فشل الإرسال — تحقق من الاتصال.'
-      }
-      document.getElementById('send-btn').disabled = false;
-    });
-  </script></body>
-</html><!-- README موجز للرفع عبر Termux -->تعليمات نشر الموقع (Termux + Git)
-
-1. افتح Termux ثم انتقل إلى مجلد المشروع المحلي (أو استنسخه من GitHub إذا لم يكن لديك):
-
-
-
-cd ~/projects
-# أو
-git clone https://github.com/alkhulaqiw/waleedalkhulaqi-website.git
-cd waleedalkhulaqi-website
-
-2. ضع الملفات (index.html، مجلد ai/، css/، images/...) في جذر المستودع.
-
-
-3. تأكد من وجود ملف CNAME يحتوي على اسم النطاق:
-
-
-
-# ملف CNAME
-waleedalkhulaqi.website
-
-4. أضف، ارتكب، وادفع التغييرات:
-
-
-
-git add .
-git commit -m "إضافة القالب الرئيسي ودمج مع RSS وFormspree"
-git push origin main
-
-5. في إعدادات المستودع على GitHub: Settings → Pages اختر الفرع main و/ (root) ثم احفظ. سيصبح الموقع متاحًا خلال دقائق على:
-
-
-
-https://waleedalkhulaqi.website
-
-6. ملاحظات مهمة:
-
-
-
-استخدمت proxy مجاني https://api.allorigins.win لقراءة RSS لتجاوز قيود CORS. يمكنك استبداله بخدمة خاصة أو إعداد Cloudflare Worker لاحقًا.
-
-لإرسال نماذج الاتصال بدون خادم استخدم خدمات مثل Formspree أو Zapier أو Make (Integromat). بدّل عنوان endpoint في الكود.
-
-لتحسين SEO أضف ملف sitemap.xml وrobots.txt في جذر المشروع.
-
-
-<!-- إن احتجت، أجهز الآن ملفات الأدوات البسيطة داخل مجلد /ai/ (مثل text-generator.html) -->
+  </footer>
+</body>
+</html>
