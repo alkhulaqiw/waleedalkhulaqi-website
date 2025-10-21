@@ -1,3 +1,10 @@
 User-agent: *
 Allow: /
-Sitemap: https://waleedalkhulaqi.website/v2/sitemap.xml
+
+# حظر مجلدات غير ضرورية (إن وجدت)
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /private/
+
+# تحديد خريطة الموقع لمساعدة محركات البحث
+Sitemap: https://waleedalkhulaqi.website/sitemap.xml
