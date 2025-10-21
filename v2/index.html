@@ -3,21 +3,62 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>وليد الخلاقي — موقع شخصي احترافي</title>
-  <meta name="description" content="وليد الخلاقي — موقع شخصي يجمع المرئي، المسموع، والمكتوب مع أدوات ذكاء اصطناعي مجانية." />
+  <title>وليد الخلاقي — موقع شخصي احترافي في البرمجة والذكاء الاصطناعي</title>
+
+  <!-- 🔍 تحسين SEO -->
+  <meta name="description" content="الموقع الشخصي لوليد الخلاقي — مطوّر ومبدع محتوى رقمي يقدم مقالات وأدوات ذكاء اصطناعي مجانية في البرمجة، التقنية، والتصميم." />
+  <meta name="keywords" content="وليد الخلاقي, waleed alkhulaqi, الذكاء الاصطناعي, برمجة, تصميم, موقع شخصي, أدوات الذكاء, توليد الصور, تحويل الصوت إلى نص" />
   <meta name="author" content="Waleed Alkhulaqi" />
-  <!-- Open Graph -->
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://waleedalkhulaqi.website/" />
+
+  <!-- 🌐 Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://waleedalkhulaqi.website/" />
   <meta property="og:title" content="وليد الخلاقي — موقع شخصي احترافي" />
-  <meta property="og:description" content="مقالات، وسائط، وأدوات ذكاء اصطناعي مجانية." />
+  <meta property="og:description" content="موقع شخصي يجمع المرئي، المسموع، والمكتوب مع أدوات ذكاء اصطناعي مجانية." />
+  <meta property="og:image" content="https://waleedalkhulaqi.website/logo.png" />
   <meta property="og:locale" content="ar_AR" />
-  <!-- Tailwind CDN -->
+  <meta property="og:site_name" content="Waleed Alkhulaqi Website" />
+
+  <!-- 🐦 Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="وليد الخلاقي — موقع شخصي احترافي" />
+  <meta name="twitter:description" content="مقالات وأدوات ذكاء اصطناعي مجانية في البرمجة والتقنية." />
+  <meta name="twitter:image" content="https://waleedalkhulaqi.website/logo.png" />
+
+  <!-- 📊 Structured Data (Google JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Waleed Alkhulaqi",
+    "alternateName": "وليد الخلاقي",
+    "url": "https://waleedalkhulaqi.website/",
+    "image": "https://waleedalkhulaqi.website/logo.png",
+    "description": "مطوّر ومبدع محتوى رقمي في مجالات البرمجة والذكاء الاصطناعي.",
+    "jobTitle": "مطور ويب ومبدع محتوى",
+    "nationality": "Yemen",
+    "email": "info@waleedalkhulaqi.website",
+    "sameAs": [
+      "https://www.facebook.com/",
+      "https://www.instagram.com/",
+      "https://www.youtube.com/",
+      "https://x.com/"
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-slate-50 text-slate-900 font-sans">
   <header class="bg-white shadow">
     <div class="max-w-5xl mx-auto p-6 flex items-center justify-between">
       <div>
-        <img src="logo.svg" alt="logo" style="height:64px;display:block;margin-bottom:6px;"/><h1 class="text-2xl font-bold">وليد الخلاقي</h1>
+        <img src="logo.svg" alt="شعار وليد الخلاقي" style="height:64px;display:block;margin-bottom:6px;"/>
+        <h1 class="text-2xl font-bold">وليد الخلاقي</h1>
         <p class="text-sm text-slate-500">موقع شخصي احترافي — المرئي، المسموع، والمكتوب</p>
       </div>
       <nav class="space-x-4">
@@ -34,37 +75,37 @@
   <main class="max-w-5xl mx-auto p-6">
     <section class="bg-white rounded-2xl p-6 mb-6 shadow">
       <div class="flex flex-col md:flex-row items-center gap-6">
-        <img src="https://picsum.photos/seed/waleed/240/240" alt="Waleed" class="rounded-full w-48 h-48 object-cover" />
+        <img src="https://picsum.photos/seed/waleed/240/240" alt="وليد الخلاقي" class="rounded-full w-48 h-48 object-cover" />
         <div>
           <h2 class="text-2xl font-semibold">مرحبًا — أنا وليد الخلاقي</h2>
           <p class="mt-2 text-slate-600">
-            مطوّر ومبدع محتوى رقمي. هذا الموقع يجمع أعمالي، مقالاتي، و أدوات ذكاء اصطناعي مجانية تساعدك على توليد المحتوى، توليد الصور، والتحويل بين الصوت والنص.
+            مطوّر ومبدع محتوى رقمي. هذا الموقع يجمع أعمالي، مقالاتي، وأدوات ذكاء اصطناعي مجانية تساعدك على توليد المحتوى، توليد الصور، والتحويل بين الصوت والنص.
           </p>
           <div class="mt-4 flex gap-3">
-            <a href="ai-tools.html" class="px-4 py-2 bg-slate-900 text-white rounded">جرّب أدواتي</a>
-            <a href="contact.html" class="px-4 py-2 border rounded">تواصل معي</a>
+            <a href="ai-tools.html" class="px-4 py-2 bg-slate-900 text-white rounded hover:bg-slate-800">جرّب أدواتي</a>
+            <a href="contact.html" class="px-4 py-2 border rounded hover:bg-slate-100">تواصل معي</a>
           </div>
         </div>
       </div>
     </section>
 
     <section class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <article class="bg-white p-4 rounded shadow">
+      <article class="bg-white p-4 rounded shadow hover:shadow-lg transition">
         <h3 class="font-semibold">المقالات</h3>
         <p class="text-sm text-slate-500 mt-2">مقالات في الذكاء الاصطناعي والتقنية والإعلام.</p>
         <a href="blog.html" class="mt-3 inline-block text-sm text-blue-600">عرض المقالات →</a>
       </article>
 
-      <article class="bg-white p-4 rounded shadow">
+      <article class="bg-white p-4 rounded shadow hover:shadow-lg transition">
         <h3 class="font-semibold">الوسائط</h3>
         <p class="text-sm text-slate-500 mt-2">مكتبة الفيديوهات والصوتيات والصور.</p>
         <a href="media.html" class="mt-3 inline-block text-sm text-blue-600">عرض الوسائط →</a>
       </article>
 
-      <article class="bg-white p-4 rounded shadow">
+      <article class="bg-white p-4 rounded shadow hover:shadow-lg transition">
         <h3 class="font-semibold">الأدوات الذكية</h3>
         <p class="text-sm text-slate-500 mt-2">مولد نصوص، توليد صور، تحويل صوت ↔ نص.</p>
-        <a href="ai-tools.html" class="mt-3 inline-block text-sm text-blue-600">جرب الأدوات →</a>
+        <a href="ai-tools.html" class="mt-3 inline-block text-sm text-blue-600">جرّب الأدوات →</a>
       </article>
     </section>
   </main>
