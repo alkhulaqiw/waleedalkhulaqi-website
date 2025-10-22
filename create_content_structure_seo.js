@@ -136,7 +136,7 @@ function htmlTemplate(title, category, topic) {
 </html>`;
 }
 
-// إنشاء المجلدات والملفات
+// إنشاء المجلدات والملفات دون استبدال القديم
 Object.entries(structure).forEach(([category, topics]) => {
   const dirPath = path.join(baseDir, category);
   fs.mkdirSync(dirPath, { recursive: true });
@@ -145,13 +145,17 @@ Object.entries(structure).forEach(([category, topics]) => {
     const fileName = `${topic}.html`;
     const filePath = path.join(dirPath, fileName);
     const title = topic.replace(/-/g, " ");
-    fs.writeFileSync(filePath, htmlTemplate(title, category, topic), "utf8");
+
+    // ✅ فقط إنشاء الملف إذا لم يكن موجودًا
+    if (!fs.existsSync(filePath)) {
+      fs.writeFileSync(filePath, htmlTemplate(title, category, topic), "utf8");
+    }
   });
 });
 
-console.log("✅ تم إنشاء المقالات مع روابط داخلية وSchema جاهز بنجاح!");
+console.log("✅ تم إنشاء المقالات الجديدة فقط مع روابط داخلية وSchema جاهز!");
 
-// 🔁 تحديث خريطة الموقع تلقائيًا بعد إنشاء المقالات
+// 🔁 تحديث sitemap.xml
 try {
   console.log("\n🔁 جاري تحديث خريطة الموقع (sitemap.xml)...");
   execSync("node generate_sitemap.js", { stdio: "inherit" });
@@ -160,11 +164,20 @@ try {
   console.error("⚠️ حدث خطأ أثناء تحديث sitemap:", err.message);
 }
 
-// 🤖 تحديث ملف robots.txt تلقائيًا بعد تحديث sitemap
+// 🤖 تحديث robots.txt
 try {
   console.log("\n🤖 جاري تحديث ملف robots.txt...");
   execSync("node update_robots.js", { stdio: "inherit" });
   console.log("✅ تم تحديث robots.txt بنجاح!");
 } catch (err) {
   console.error("⚠️ حدث خطأ أثناء تحديث robots.txt:", err.message);
+}
+
+// 🌐 إرسال Ping تلقائي إلى Google
+try {
+  console.log("\n🌐 جاري إرسال Ping إلى Google...");
+  execSync(`curl -s "https://www.google.com/ping?sitemap=${siteURL}/sitemap.xml"`, { stdio: "inherit" });
+  console.log("✅ تم إرسال Ping إلى Google بنجاح!");
+} catch (err) {
+  console.error("⚠️ حدث خطأ أثناء إرسال Ping إلى Google:", err.message);
 }
