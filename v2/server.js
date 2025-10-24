@@ -1,17 +1,12 @@
-// server.js — Agent Proxy + واجهة ويب لتجربة SSE
-// مجلد: ~/waleedalkhulaqi-website/agent-proxy
-
 const express = require('express');
 const cors = require('cors');
-const EventSourceClient = require('eventsource'); // مكتبة EventSource لـ Node
+const EventSourceClient = require('eventsource');
 const app = express();
 const PORT = 3001;
 
-// -------------------- إعدادات Express --------------------
 app.use(cors());
 app.use(express.json());
 
-// -------------------- العملاء المتصلين --------------------
 let clients = [];
 
 app.get('/events', (req, res) => {
@@ -36,7 +31,6 @@ function sendMessage(message) {
   clients.forEach(client => client.res.write(`data: ${message}\n\n`));
 }
 
-// -------------------- الاتصال بالوكيل الخارجي SSE --------------------
 const SSE_URL = "https://myaiagent12.web.dappier.com/askai/wd_01k63ndmaefqdtjvdrp9rktqwb/event?apiKey=ak_01k22rc3x1e148dcgbk3d3jaj3&sessionId=4c31700e5013abdadbe9107c132a665f5cdc11dfdea9fa7425fdc1a38b37928b";
 
 const es = new EventSourceClient(SSE_URL);
@@ -51,7 +45,6 @@ es.onerror = (err) => {
   sendMessage("❌ فشل الاتصال بالوكيل...");
 };
 
-// -------------------- واجهة ويب لتجربة SSE --------------------
 app.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
@@ -91,7 +84,6 @@ app.get('/', (req, res) => {
   `);
 });
 
-// -------------------- تشغيل السيرفر --------------------
 app.listen(PORT, () => {
   console.log(`✅ Server listening on port ${PORT}`);
   console.log(`🌐 افتح المتصفح على http://localhost:${PORT} لتجربة SSE`);
