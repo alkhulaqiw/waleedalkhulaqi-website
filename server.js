@@ -1,4 +1,4 @@
-// server.js — Agent Proxy جاهز للعمل على Node 24
+// server.js — Agent Proxy + واجهة ويب لتجربة SSE
 // مجلد: ~/waleedalkhulaqi-website/agent-proxy
 
 const express = require('express');
@@ -7,13 +7,13 @@ const EventSourceClient = require('eventsource'); // مكتبة EventSource لـ
 const app = express();
 const PORT = 3001;
 
-// تمكين CORS للصفحة
+// -------------------- إعدادات Express --------------------
 app.use(cors());
 app.use(express.json());
 
+// -------------------- العملاء المتصلين --------------------
 let clients = [];
 
-// نقطة SSE للصفحة
 app.get('/events', (req, res) => {
   res.setHeader('Content-Type', 'text/event-stream');
   res.setHeader('Cache-Control', 'no-cache');
@@ -24,17 +24,19 @@ app.get('/events', (req, res) => {
   const newClient = { id: clientId, res };
   clients.push(newClient);
 
+  console.log(`🟢 عميل متصل: ${clientId} (عدد العملاء: ${clients.length})`);
+
   req.on('close', () => {
     clients = clients.filter(c => c.id !== clientId);
+    console.log(`🔴 عميل فصل: ${clientId} (عدد العملاء: ${clients.length})`);
   });
 });
 
-// دالة لإرسال رسالة لكل العملاء المتصلين
 function sendMessage(message) {
   clients.forEach(client => client.res.write(`data: ${message}\n\n`));
 }
 
-// مثال: الاتصال بوكيل خارجي SSE (تعديل الـ URL حسب وكيلك)
+// -------------------- الاتصال بالوكيل الخارجي SSE --------------------
 const SSE_URL = "https://myaiagent12.web.dappier.com/askai/wd_01k63ndmaefqdtjvdrp9rktqwb/event?apiKey=ak_01k22rc3x1e148dcgbk3d3jaj3&sessionId=4c31700e5013abdadbe9107c132a665f5cdc11dfdea9fa7425fdc1a38b37928b";
 
 const es = new EventSourceClient(SSE_URL);
@@ -49,6 +51,48 @@ es.onerror = (err) => {
   sendMessage("❌ فشل الاتصال بالوكيل...");
 };
 
+// -------------------- واجهة ويب لتجربة SSE --------------------
+app.get('/', (req, res) => {
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="ar" dir="rtl">
+    <head>
+      <meta charset="UTF-8">
+      <title>واجهة SSE الوكيل</title>
+      <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f4f4f4; }
+        h1 { color: #333; }
+        #messages { border: 1px solid #ccc; padding: 10px; background: #fff; height: 300px; overflow-y: scroll; }
+      </style>
+    </head>
+    <body>
+      <h1>📡 رسائل الوكيل في الوقت الحقيقي</h1>
+      <div id="messages"></div>
+      <script>
+        const evtSource = new EventSource('/events');
+        const messagesDiv = document.getElementById('messages');
+
+        evtSource.onmessage = (event) => {
+          const p = document.createElement('p');
+          p.textContent = event.data;
+          messagesDiv.appendChild(p);
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        };
+
+        evtSource.onerror = () => {
+          const p = document.createElement('p');
+          p.textContent = "❌ فشل الاتصال بالسيرفر...";
+          p.style.color = "red";
+          messagesDiv.appendChild(p);
+        };
+      </script>
+    </body>
+    </html>
+  `);
+});
+
+// -------------------- تشغيل السيرفر --------------------
 app.listen(PORT, () => {
   console.log(`✅ Server listening on port ${PORT}`);
+  console.log(`🌐 افتح المتصفح على http://localhost:${PORT} لتجربة SSE`);
 });
