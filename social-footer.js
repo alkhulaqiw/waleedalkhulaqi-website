@@ -1,48 +1,30 @@
-<footer class="footer">
-  <div class="footer-content">
-    <p>© 2025 Waleed Alkhulaqi. جميع الحقوق محفوظة.</p>
-
-    <div class="social-links">
-      <a href="https://youtube.com/@waleedalkhulaki" target="_blank" aria-label="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.tiktok.com/@waleed.alkhulaqi?_t=ZS-90M1VNTYEJV&_r=1" target="_blank" aria-label="TikTok">
-        <i class="fab fa-tiktok"></i>
-      </a>
-      <a href="https://www.instagram.com/waleedalkhulaqi" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.facebook.com/waleedalkhulaqi" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-    </div>
-  </div>
-</footer>
-
-<!-- مكتبة Font Awesome للأيقونات -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-<style>
-.footer {
-  background: #0d0d0d;
-  color: #fff;
-  text-align: center;
-  padding: 20px;
-  font-family: 'Cairo', sans-serif;
-}
-
-.social-links {
-  margin-top: 10px;
-}
-
-.social-links a {
-  color: #fff;
-  margin: 0 10px;
-  font-size: 1.5rem;
-  transition: color 0.3s;
-}
-
-.social-links a:hover {
-  color: #ff4747;
-}
-</style>
+// social-footer.js - Shadow DOM v20260816
+document.addEventListener("DOMContentLoaded", function() {
+  if (document.getElementById("waleed-social-footer")) return;
+  const host = document.createElement("footer");
+  host.id = "waleed-social-footer";
+  host.setAttribute("role","contentinfo");
+  host.setAttribute("lang","ar");
+  host.setAttribute("dir","rtl");
+  document.body.appendChild(host);
+  const shadow = host.attachShadow({mode:"open"});
+  const year = new Date().getFullYear();
+  shadow.innerHTML = `
+    <style>
+      :host{display:block;margin-top:40px}
+      .wrapper{background:#111;color:#fff;padding:25px 10px;text-align:center;font-family:Tahoma,Arial,sans-serif;direction:rtl}
+      nav{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;font-size:15px}
+      a{color:inherit;text-decoration:none;display:inline-flex;gap:5px}
+      a:hover{text-decoration:underline;opacity:.8}
+    </style>
+    <div class="wrapper">
+      <div style="margin-bottom:14px;font-weight:600">تواصل معي - Waleed Al-Khulaqi © ${year}</div>
+      <nav>
+        <a href="https://x.com/waleedalkhulaqi" target="_blank" rel="noopener noreferrer" style="color:#1DA1F2">𝕏 تويتر</a>
+        <a href="https://instagram.com/waleedalkhulaqi" target="_blank" rel="noopener noreferrer" style="color:#E1306C">📸 انستا</a>
+        <a href="https://www.facebook.com/100001570730388" target="_blank" rel="noopener noreferrer" style="color:#1877F2">📘 فيسبوك</a>
+        <a href="https://www.threads.com/@waleedalkhulaqi" target="_blank" rel="noopener noreferrer" style="color:#fff">🧵 ثريدز</a>
+        <a href="mailto:kas201066@gmail.com" style="color:#FFD700">✉️ ايميل</a>
+      </nav>
+    </div>`;
+});
