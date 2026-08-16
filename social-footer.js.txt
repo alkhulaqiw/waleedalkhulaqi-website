@@ -1,0 +1,50 @@
+// social-footer.js - نسخة Shadow DOM - عزل كامل - v20260816
+document.addEventListener("DOMContentLoaded", function() {
+  if (document.getElementById("waleed-social-footer")) return;
+
+  const host = document.createElement("footer");
+  host.id = "waleed-social-footer";
+  host.setAttribute("role", "contentinfo");
+  host.setAttribute("lang", "ar");
+  host.setAttribute("dir", "rtl");
+  host.setAttribute("aria-label", "روابط التواصل الاجتماعي");
+  document.body.appendChild(host);
+
+  const shadow = host.attachShadow({ mode: "open" });
+  const year = new Date().getFullYear();
+
+  shadow.innerHTML = `
+    <style>
+      :host { display: block; margin-top: 40px; }
+      .wrapper {
+        background: #111;
+        color: #fff;
+        padding: 25px 10px;
+        text-align: center;
+        font-family: Tahoma, Arial, sans-serif;
+        direction: rtl;
+      }
+      .title { margin-bottom: 14px; font-size: 16px; font-weight: 600; }
+      nav { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; font-size: 15px; }
+      a { color: inherit; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; transition: opacity 0.2s; }
+      a:hover { opacity: 0.8; text-decoration: underline; }
+      .x { color: #1DA1F2; }
+      .insta { color: #E1306C; }
+      .fb { color: #1877F2; }
+      .threads { color: #fff; }
+      .mail { color: #FFD700; }
+      .copy { margin-top: 14px; font-size: 12px; color: #aaa; }
+    </style>
+    <div class="wrapper">
+      <div class="title">تواصل معي - Waleed Al-Khulaqi © ${year}</div>
+      <nav aria-label="Social links">
+        <a class="x" href="https://x.com/waleedalkhulaqi" target="_blank" rel="noopener noreferrer" aria-label="تويتر"><span aria-hidden="true">𝕏</span> تويتر</a>
+        <a class="insta" href="https://instagram.com/waleedalkhulaqi" target="_blank" rel="noopener noreferrer" aria-label="انستغرام"><span aria-hidden="true">📸</span> انستا</a>
+        <a class="fb" href="https://www.facebook.com/100001570730388" target="_blank" rel="noopener noreferrer" aria-label="فيسبوك"><span aria-hidden="true">📘</span> فيسبوك</a>
+        <a class="threads" href="https://www.threads.com/@waleedalkhulaqi" target="_blank" rel="noopener noreferrer" aria-label="ثريدز"><span aria-hidden="true">🧵</span> ثريدز</a>
+        <a class="mail" href="mailto:kas201066@gmail.com" aria-label="البريد الإلكتروني"><span aria-hidden="true">✉️</span> ايميل</a>
+      </nav>
+      <div class="copy">waleedalkhulaqi.website | جميع الحقوق محفوظة</div>
+    </div>
+  `;
+});
